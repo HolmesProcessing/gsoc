@@ -1,14 +1,14 @@
 ---
-title: Project Title
-subtitle: Project Subtitle
+title: Building Static analysis Services for Holmes Processing
+subtitle: Template project
 layout: default
 modal-id: 2
 category: gsoc2017
-date: 2017-01-01
+date: 2017-08-22
 img: temp.svg
 thumbnail: temp.svg
 alt: license-img
-repository: https://github.com/HolmesProcessing/gsoc_
+repository: https://github.com/HolmesProcessing/Holmes-Totem
 documentation: 
 license: 
 
@@ -16,4 +16,43 @@ license:
 
 ##### Overview
 
-Content Goes Here
+My name is Manohar Reddy currently studying 4th year BTech from IIIT Vadodara.
+
+Throughout this GSoC, I've learned a lot of things about Executable both PE and ELF files. Also about how a process gets loaded into memory. I am very thankful to my both mentors who have provided me resources to learn about executables and guided me by suggesting the best to do to achieve speed to PEMeta. I am also thankful to my friends at Holmes who gave me continuous feedback on my work and suggested more features to Services.
+
+This project tries to lower the bar of entry into HolmesProcessing by creating a Template to build a new Totem Service. Throughout this project, I built 2 Totem Static Services and documented about Totem Services and how to create a new Totem Service. To reduce the overhead of copy pasting boiler plate code for creating new service, I created a Template engine which automatically creates a boilerplate code for a particular type of Service to be written in a particular language.
+
+Currently, there are various types of configuration files used throughout Holmes. This is because each configuration has its own advantages. But this has made people learn about various configuration files type. To reduce this, I unified everything so that we only have one type of configuration that is JSON.
+
+
+##### PEMeta.
+
+This Service is written in Golang. This Service analyses PE files and it uses [PEV](http://pev.sourceforge.net) as the analyzer library. PEV is a command line. Services that has command line tool as analyzer library, has to make direct system calls. This has found to be eating a lot of CPU and is very inefficient. So I build LIBPE which a C library for PEV and created a wrapper around it.
+
+
+##### LIBPE
+
+Building LIBPE C library is one of the biggest parts of the project. Before we choose to use the library, LIBPE has very basic implementation where it only implements interfaces to analyze headers. We extended LIBPE to support everything that PEV supports and used this library as the analyzer library for PEMeta.
+
+https://github.com/merces/libpe/pull/14
+
+##### PEInfo v2
+This Service is written in Python3. This Services also analyses PE files but it uses [pefile](https://github.com/erocarrera/pefile) as the analyser library. The current version of PEInfo is very slow with average analyzing speed of 2227ms/sample. I've updated service with latest version of pefile. Now the average analyzing speed is 800ms/sample
+
+
+##### Documentation
+
+As for documentation, I added helloworld programmes to extending Totem Services section and written documentation for Section Totem Services.
+
+
+##### Template Engine
+
+Create all the essential boiler plate code neededto create a Service. The user can directly jump in and startconcentrating on service logic. This one currently creates RESTFull type Services This Template has greater potential when gRPC is implemented where user has to do lot of earlyconfiguration before writing with Service logic. 
+
+https://github.com/HolmesProcessing/Holmes-Toolbox/pull/38
+
+##### Future Work
+
+This year, I am able to create a template for Static services. But I was not able to implement dynamic services because I dont have required hardware to simulate them. Currently services uses RESTfull protocol for communication but this has found to be creating a lot of memory overhead. To reduce this, we should use gRPC as a communication protocol. After GSoC, I plan to work reduce memory on Totem. 
+
+
