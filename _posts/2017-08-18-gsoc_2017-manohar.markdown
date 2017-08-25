@@ -1,15 +1,15 @@
 ---
 title: Building Static analysis Services for Holmes Processing
-subtitle: Template project
+subtitle: Creating Template and Documentation
 layout: default
 modal-id: 2
 category: gsoc2017
-date: 2017-08-22
-img: temp.svg
-thumbnail: temp.svg
+date: 2017-08-25
+img: manohar.svg
+thumbnail: manohar.svg
 alt: license-img
 repository: https://github.com/HolmesProcessing/Holmes-Totem
-documentation: 
+documentation: https://docs.holmesprocessing.com/en/latest/rst/components/holmes-totem/services/index.html
 license: 
 
 ---
