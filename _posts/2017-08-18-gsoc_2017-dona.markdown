@@ -1,16 +1,16 @@
 ---
 title: Holmes Automated Malware Relationships
-subtitle: Modeling and Defining Relationships
+subtitle: Defining and Modeling Relationships
 layout: default
 modal-id: 3
 category: gsoc2017
 date: 2017-01-01
-img: temp.svg
-thumbnail: temp.svg
+img: dona.svg
+thumbnail: dona.svg
 alt: license-img
 repository: https://github.com/cli0/gsoc_relationship
-documentation:
-license:
+documentation: https://github.com/cli0/gsoc_relationship/blob/primary_relationships/README.md
+license: https://github.com/cli0/gsoc_relationship/blob/master/LICENSE
 
 ---
 
@@ -161,4 +161,4 @@ Overall, I am happy with the results of my project, since I managed to fulfill a
 
 ### Acknowledgements
 
-GSoC was a great experience and this was in no small part due to my mentors. Thank you for your support and your input: George, Huang, Ryan and Zach. I had a great time doing this project!
+GSoC was a great experience and this was in no small part due to my mentors. Thank you for your support and your input: George Webster, Huang Xiao, Ryan Harris and Zachary Hanif. I had a great time doing this project!
