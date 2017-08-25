@@ -139,7 +139,7 @@ one entry per object.
 
 ### Good Times, Hard Times
 
-The experience that I gathered while doing GSoC was extremely valuable. I had the chance to discuss with experts and get valuable insights on how to approach a problem, how to model my data, and how to make compromises between efficiency and accuracy. Sounds pretty straightforward in retrospect, but when you are a student thrown into a real-world data management environment, you may end up struggling for a while until you learn to let go of what's weighing you down (your biases). GSoC was tough, but the good kind. It is something that I would warmly recommend to anyone who wants to engage in the open source community, build something beautiful, and likes to struggle for their reward.   
+The experience that I gained while doing GSoC was extremely valuable. I had the chance to discuss with experts and get valuable insights on how to approach a problem, how to model my data, and how to make compromises between efficiency and accuracy. Sounds pretty straightforward in retrospect, but when you are a student thrown into a real-world data management environment, you may end up struggling for a while until you learn to let go of what's weighing you down (your biases). GSoC was tough, but the good kind. It is something that I would warmly recommend to anyone who wants to engage in the open source community, build something beautiful, and likes to struggle for their reward.   
 
 
 ### Future Work
