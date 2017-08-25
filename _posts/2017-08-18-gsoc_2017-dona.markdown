@@ -1,16 +1,16 @@
 ---
-title: Holmes Automated Malware Relationships Part I
-subtitle: Modeling and Defining Relationships
+title: Holmes Automated Malware Relationships
+subtitle: Defining and Modeling Relationships
 layout: default
 modal-id: 3
 category: gsoc2017
 date: 2017-01-01
-img: temp.svg
-thumbnail: temp.svg
+img: dona.svg
+thumbnail: dona.svg
 alt: license-img
 repository: https://github.com/cli0/gsoc_relationship
-documentation:
-license:
+documentation: https://github.com/cli0/gsoc_relationship/blob/primary_relationships/README.md
+license: https://github.com/cli0/gsoc_relationship/blob/master/LICENSE
 
 ---
 
@@ -39,7 +39,7 @@ This project was developed as a service for Holmes Processing System and uses da
 
 Defining and scoring malware relationships requires a two stage process:
 
-1. Stage 1 for extracting and pre-processing necessary malware features that can act as reliable indicators of relationship
+1. Stage 1 for extracting and pre-processing malware features of interest
 
 2. Stage 2 to utilize the data from stage 1 for final relationships generation and scoring.
 
@@ -54,9 +54,9 @@ meaningful connections or `relationships` with one another.
 
 For example: A malicious executable may issue a call to a specific domain associated with one or more IPs, which, in turn, might be related to some bot campaign. In this scenario, we can already identify several relationships:
 
-1. Executable <-> Domain
-2. Domain <-> IP
-3. (and by the transitive property of a bidirectional connection): Executable <-> IP
+1. Executable_1 <-> Domain_2
+2. Domain_2 <-> IP_3
+3. Executable_1 <-> IP_3
 
 Each of the described connections above is a valid primary relationship.
 The following picture is a high level view of the potential relationships that one can encounter in our environment.
@@ -77,7 +77,9 @@ analytics_knowledge_base
   - object_id text,
   - feature_type text,
   - feature_value blob,
-  - timestamp timeuuid```
+  - timestamp timeuuid
+
+```
 
 The features of interest are manually defined, in this case by me through careful research. This set is by no means exhaustive and it can (and should) be extended by the analyst whenever new results types (or new research) adequately provide new relevant features. So far, my system uses the following features as indicators of relationships:
 
@@ -88,6 +90,7 @@ pehash | PEInfo
 binary_signature | PEInfo
 domain_requests | CUCKOO
 yara_rules | Yara  
+
 
 The Knowledge Base table stores the relevant part of the features too. Due to the potentially large size, the feature content is compressed with gzip, hence the blob type. The de/compression methods we use were slightly adapted from the following [repository](https://gist.github.com/owainlewis/1e7d1e68a6818ee4d50e). The compression method in this repository is very fast, lightweight and incurs little to no speed penalties according to my tests.
 
@@ -158,4 +161,4 @@ Overall, I am happy with the results of my project, since I managed to fulfill a
 
 ### Acknowledgements
 
-GSoC was a great experience and this was in no small part due to my mentors. Thank you for your support and your input: George, Huang, Ryan and Zach. I had a great time doing this project!
+GSoC was a great experience and this was in no small part due to my mentors. Thank you for your support and your input: George Webster, Huang Xiao, Ryan Harris and Zachary Hanif. I had a great time doing this project!
