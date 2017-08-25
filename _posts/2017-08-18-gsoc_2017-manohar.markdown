@@ -44,7 +44,7 @@ Using the Template, I created 2 example services which analyzes PE file.
 
 #### PEMeta.
 
-I created [PEMeta](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/pemeta) Service in Golang. This Service analyses PE files and it uses [PEV](http://pev.sourceforge.net) as the analyzer library. PEV is a command line. Services that has command line tool as analyzer library, has to make direct system calls. This has found to be eating a lot of CPU and is very inefficient. So I built [libpe](https://github.com/merces/libpe) (a C library for PEV) and used it an analyzer library. This has resulted in good speed up for pemeta. The average anlaysis speed is 280ms/sample
+I created [PEMeta](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/pemeta) Service in Golang. This Service analyses PE files and it uses [PEV](http://pev.sourceforge.net) as the analyzer library. PEV is a command line. Services that has command line tool as analyzer library, has to make direct system calls. This has found to be eating a lot of CPU and is very inefficient. So I built [libpe](https://github.com/merces/libpe) (a C library for PEV) and used it an analyzer library. This has resulted in good speed up for pemeta. The average anlaysis speed is 250.1ms/sample
 
 ##### LIBPE
 
@@ -53,14 +53,18 @@ Building [libpe](https://github.com/merces/libpe) is one of the biggest parts of
 Contributions: https://github.com/merces/libpe/pull/14
 
 #### PEInfo v2
-I created [PEInfo v2](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/peinfo) Service in Python3. This Services also analyses PE files but it uses [pefile](https://github.com/erocarrera/pefile) as the analyser library. The current version of PEInfo is very slow with average analyzing speed of 2227ms/sample. I've updated service with latest version of pefile. Now the average analyzing speed is 800ms/sample
+I created [PEInfo v2](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/peinfo) Service in Python3. This Services also analyses PE files but it uses [pefile](https://github.com/erocarrera/pefile) as the analyser library. The current version of PEInfo is very slow with average analyzing speed of 2232ms/sample. I've updated service with latest version of pefile. Now the average analyzing speed is 242ms/sample
 
 ##### Performance Comparision
+
+The comparision table of the 2 services that analyses PE file is given below.
+
 | sha2 (last 8 chars) | Name | PEMETA | PEINFO (v1) | PEINFO (v2) |
 | --- | --- | --- | --- | --- |
 |c3597767 | umss.exe | 57.7ms | 413.4 ms | 87.2ms |
 |bb30af68|EXE.exe| 751.2ms |4340.1ms |832.3ms|
 |81faa32e|_isdel.exe |21.6ms |243.4ms |error (exports)|
+|56254abc| ccsetup514.exe| 1001.0ms | 6267.8 ms |764.6 ms|
 |73da12d8| chkdsk.exe| 21.8ms | 758.3ms |92.9ms|
 |9b7dd7e8| cipher.exe |31.4ms |730.3 ms |error|
 |084409a0| bfsvc.exe |58.3ms |error |77.1ms|
@@ -68,6 +72,8 @@ I created [PEInfo v2](https://github.com/HolmesProcessing/Holmes-Totem/tree/mast
 |acb8d3da| ARP.exe |  15.8ms |635.1ms |54.8ms|
 |44bd81cb|7z1514.exe| 249.04ms |1261.5ms |133.9ms|
 |Average||250.1ms|2232.3ms|242.5ms|
+
+The performance of new version of PEINFO has improved a lot. PEMeta and PEINFO v2 performs equally.
 
 ### Documentation
 
