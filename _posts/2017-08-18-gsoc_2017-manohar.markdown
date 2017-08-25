@@ -16,7 +16,7 @@ license:
 
 # About Me
 
-My name is Manohar Reddy currently studying 4th year BTech from IIIT Vadodara. I am mainly interested in distributed computing. This because I am sick of my 1.4 GHz processor. So I learnt that computational power can be distributed so that I can delegate the work to multiple machines and collect the results. Holmes Processing is a distributed system which is capable of large scale analysis yet it can be easily simulated on normal machines. Apart this, I am also interested in kernel development. This blog is a summary of tasks that I achieved as a part of Google Summer of Code 2017.
+My name is Manohar Reddy. Currently studying a 4th year Bachelors at IIIT Vadodara. I am mainly interested in distributed computing and kernel development. Holmes Processing is super fun because everything that I learnt in my course curriculum Algorithms, OS, DBMS, AI etc.. is implimented in here. Throughout this GSoC, I've learned a lot of things about Executable both PE and ELF files. Also about how a process gets loaded into memory.  BThis blog is a summary of tasks that I achieved as a part of Google Summer of Code 2017.
 
 # Overview
 
@@ -37,7 +37,7 @@ All the Services has a lot of common code. I put together all the common code an
 
 [Template Engine](https://github.com/HolmesProcessing/Holmes-Toolbox/tree/master/Template-Holmes-Totem-Services) Creates all the essential boilerplate code needed to create a Service. This creates all 4 files needed based on the cofiguration. This creates code by replacing `Helloworld` with the `servicename` provided in configuration file. Now a new user who want to create a Totem Service, can use template engine to create a Service and can directly jump in and start concentrating on service logic. This one currently creates RESTFull type Services. This Template has greater potential when gRPC is implemented where user has to do lot of early configuration before writing with Service logic.
 
-
+Contributions related to Template Engine: https://github.com/HolmesProcessing/Holmes-Toolbox/pull/38
 ### Example Services
 
 Using the Template, I created 2 example services which analyzes PE file.
@@ -46,15 +46,18 @@ Using the Template, I created 2 example services which analyzes PE file.
 
 I created [PEMeta](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/pemeta) Service in Golang. This Service analyses PE files and it uses [PEV](http://pev.sourceforge.net) as the analyzer library. PEV is a command line. Services that has command line tool as analyzer library, has to make direct system calls. This has found to be eating a lot of CPU and is very inefficient. So I built [libpe](https://github.com/merces/libpe) (a C library for PEV) and used it an analyzer library. This has resulted in good speed up for pemeta. The average anlaysis speed is 250.1ms/sample
 
+Contributions related to PEmeta: https://github.com/HolmesProcessing/Holmes-Totem/pull/165
+
 ##### LIBPE
 
 Building [libpe](https://github.com/merces/libpe) is one of the biggest parts of the project. Before I choose to use the library, it has very basic implementation where it only implements interfaces to analyze headers. I extended libpe to support everything that PEV supports and used this library as the analyzer library for PEMeta.
 
-Contributions: https://github.com/merces/libpe/pull/14
+Contributions related to libpe: https://github.com/merces/libpe/pull/14
 
 #### PEInfo v2
 I created [PEInfo v2](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/peinfo) Service in Python3. This Services also analyses PE files but it uses [pefile](https://github.com/erocarrera/pefile) as the analyser library. The current version of PEInfo is very slow with average analyzing speed of 2232ms/sample. I've updated service with latest version of pefile. Now the average analyzing speed is 242ms/sample
 
+Contributions related to PEInfo v2: https://github.com/HolmesProcessing/Holmes-Totem/pull/166
 ##### Performance Comparision
 
 The comparision table of the 2 services that analyses PE file is given below.
@@ -88,4 +91,4 @@ Currently services uses RESTfull protocol for communication but this has found t
 
 # Acknoledgement
 
-Throughout this GSoC, I've learned a lot of things about Executable both PE and ELF files. Also about how a process gets loaded into memory. I am very thankful to my both mentors who have provided me resources to learn about executables and guided me by suggesting the best to do to achieve speed to PEMeta. I am also thankful to my friends at Holmes who gave me continuous feedback on my work and suggested more features to Services.
+I am very thankful to my both mentors George Webster and Zachary Hanif who have provided me resources to learn about executables and guided me by suggesting the best to do to achieve speed to PEMeta. I am also thankful to my friends at Holmes who gave me continuous feedback on my work and suggested more features to Services.  
