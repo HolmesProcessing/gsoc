@@ -14,15 +14,15 @@ license:
 
 ---
 
-## About Me
+# About Me
 
 My name is Manohar Reddy currently studying 4th year BTech from IIIT Vadodara. I am mainly interested in distributed computing. This because I am sick of my 1.4 GHz processor. So I learnt that computational power can be distributed so that I can delegate the work to multiple machines and collect the results. Holmes Processing is a distributed system which is capable of large scale analysis yet it can be easily simulated on normal machines. Apart this, I am also interested in kernel development. This blog is a summary of tasks that I achieved as a part of Google Summer of Code 2017.
 
-## Overview
+# Overview
 
 This project tries to lower the bar of entry into HolmesProcessing by creating a Template to build a new Totem Service. Throughout this project, I built 2 Totem Static Services and documented about Totem Services and how to create a new Totem Service. I created a Template engine which automatically creates a boilerplate code for a particular type of Service to be written in a particular language.
 
-### Creating a Static Analysis Service
+## Creating a Static Analysis Service
 
 A Totem Static Service is a webserver which does analysis for a short period of time. Currently, a Totem Static Service has 4 files. 
 
@@ -33,41 +33,40 @@ A Totem Static Service is a webserver which does analysis for a short period of 
 
 All the Services has a lot of common code. I put together all the common code and created a template out of it. Using Template engine I created 2 services and about documentation about Totem Services.
 
-#### Template Engine
+### Template Engine
 
-[Template Engine]() Creates all the essential boilerplate code needed to create a Service. This creates all 4 files needed based on the cofiguration. This creates code by replacing `Helloworld` with the `servicename` provided in configuration file. Now a new user who want to create a Totem Service, can use template engine to create a Service and can directly jump in and start concentrating on service logic. This one currently creates RESTFull type Services. This Template has greater potential when gRPC is implemented where user has to do lot of early configuration before writing with Service logic.
+[Template Engine](https://github.com/HolmesProcessing/Holmes-Toolbox/tree/master/Template-Holmes-Totem-Services) Creates all the essential boilerplate code needed to create a Service. This creates all 4 files needed based on the cofiguration. This creates code by replacing `Helloworld` with the `servicename` provided in configuration file. Now a new user who want to create a Totem Service, can use template engine to create a Service and can directly jump in and start concentrating on service logic. This one currently creates RESTFull type Services. This Template has greater potential when gRPC is implemented where user has to do lot of early configuration before writing with Service logic.
 
-https://github.com/HolmesProcessing/Holmes-Toolbox/pull/38
 
-#### Example Services
+### Example Services
 
 Using the Template, I created 2 example services which analyzes PE file.
 
-##### PEMeta.
+#### PEMeta.
 
-I created [PEMeta]() Service in Golang. This Service analyses PE files and it uses [PEV](http://pev.sourceforge.net) as the analyzer library. PEV is a command line. Services that has command line tool as analyzer library, has to make direct system calls. This has found to be eating a lot of CPU and is very inefficient. So I built [libpe](https://github.com/merces/libpe) (a C library for PEV) and used it an analyzer library. This has resulted in good speed up for pemeta. The average anlaysis speed is 280ms/sample
+I created [PEMeta](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/pemeta) Service in Golang. This Service analyses PE files and it uses [PEV](http://pev.sourceforge.net) as the analyzer library. PEV is a command line. Services that has command line tool as analyzer library, has to make direct system calls. This has found to be eating a lot of CPU and is very inefficient. So I built [libpe](https://github.com/merces/libpe) (a C library for PEV) and used it an analyzer library. This has resulted in good speed up for pemeta. The average anlaysis speed is 280ms/sample
 
-###### LIBPE
+##### LIBPE
 
 Building [libpe](https://github.com/merces/libpe) is one of the biggest parts of the project. Before I choose to use the library, it has very basic implementation where it only implements interfaces to analyze headers. I extended libpe to support everything that PEV supports and used this library as the analyzer library for PEMeta.
 
 Contributions: https://github.com/merces/libpe/pull/14
 
-##### PEInfo v2
-I created [PEInfo v2]() Service in Python3. This Services also analyses PE files but it uses [pefile](https://github.com/erocarrera/pefile) as the analyser library. The current version of PEInfo is very slow with average analyzing speed of 2227ms/sample. I've updated service with latest version of pefile. Now the average analyzing speed is 800ms/sample
+#### PEInfo v2
+I created [PEInfo v2](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/peinfo) Service in Python3. This Services also analyses PE files but it uses [pefile](https://github.com/erocarrera/pefile) as the analyser library. The current version of PEInfo is very slow with average analyzing speed of 2227ms/sample. I've updated service with latest version of pefile. Now the average analyzing speed is 800ms/sample
 
 
-#### Documentation
+### Documentation
 
-As for documentation, In sections [extending Totem Services](), I added hello world service programmes. In section [Totem Static Services](), I documented how a Totem Service world and what are the various components of it.
+As for documentation, In sections [extending Totem Services](https://docs.holmesprocessing.com/en/latest/rst/components/holmes-totem/extending/index.html), I added hello world service programmes. In section [Totem Static Services](https://docs.holmesprocessing.com/en/latest/rst/components/holmes-totem/services/index.html), I documented how a Totem Service world and what are the various components of it.
 
 
-### Future Work
+# Future Work
 
 This year, I am able to create a template for Static services. But I was not able to implement dynamic services because I dont have required hardware to simulate them.
 
 Currently services uses RESTfull protocol for communication but this has found to be creating a lot of memory overhead on Totem. To reduce this, we should use gRPC as a communication protocol. After GSoC, I plan to work reduce memory load on Totem.
 
-### Acknoledgement
+# Acknoledgement
 
 Throughout this GSoC, I've learned a lot of things about Executable both PE and ELF files. Also about how a process gets loaded into memory. I am very thankful to my both mentors who have provided me resources to learn about executables and guided me by suggesting the best to do to achieve speed to PEMeta. I am also thankful to my friends at Holmes who gave me continuous feedback on my work and suggested more features to Services.
