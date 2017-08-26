@@ -2,7 +2,7 @@
 title: Holmes-Analytics
 subtitle: Interface, Scheduler & Scalable Framework
 layout: default
-modal-id: 1
+modal-id: 4
 category: gsoc2017
 date: 2017-01-01
 img: investigation.svg
