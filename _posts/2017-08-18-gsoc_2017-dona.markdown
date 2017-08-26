@@ -130,7 +130,7 @@ The following figure shows the storage schema for the data that I generate in my
 |Table Name | Description |
 |-----------|-------------|
 |`analytics_knowledge_base`| stores the knowledge base content as described in Section 2.5 .|
-| `analytics_mv_knowledge_base_by_feature` | is a [Materialized View](https://www.datastax.com/dev/blog/new-in-cassandra-3-0-materialized-views) (MV) of the previous table. This MV is necessary to enable and speed up important queries.|
+| `analytics_mv_knowledge_base_by_feature` | is a [Materialized View](https://www.datastax.com/dev/blog/new-in-cassandra-3-0-materialized-views) (MV) of the previous table. This MV is necessary to enable and speed up queries for primary relationships generation.|
 | `analytics_primary_relationships` | this table stores the primary relationships as described in Section 2.6 . This table can be [expanded](https://github.com/cli0/gsoc_relationship/blob/master/storage/README.md) for newly introduced features without having to recompute the existing content. |
 {: class="table"}
 
