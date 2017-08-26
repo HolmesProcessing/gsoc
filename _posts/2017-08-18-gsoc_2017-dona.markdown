@@ -4,9 +4,9 @@ subtitle: Defining and Modeling Relationships
 layout: default
 modal-id: 3
 category: gsoc2017
-date: 2017-01-01
-img: dona.svg
-thumbnail: dona.svg
+date: 2017-08-25
+img: mal1.svg
+thumbnail: mal1.svg
 alt: license-img
 repository: https://github.com/cli0/gsoc_relationship
 documentation: https://github.com/cli0/gsoc_relationship/blob/primary_relationships/README.md
@@ -16,7 +16,7 @@ license: https://github.com/cli0/gsoc_relationship/blob/master/LICENSE
 
 ### About me
 
-My name is Dona. Currently, I am a full-time masters student at the Technical University of Munich, but sometimes I moonlight as a security and machine learning amateur researcher. My areas of interest are IT Security, Machine Learning and Distributed Systems. I love server farms, Big Data technology, playing with Apache projects and everything open source. I really dislike slow vpn connections and internet lag. I participated in Google Summer of Code for the Year 2017 and this blog post details the results of my work.
+My name is Donika Mirdita. Currently, I am a full-time masters student at the Technical University of Munich, but sometimes I moonlight as an amateur security and machine learning researcher. My areas of interest are IT Security, Machine Learning and Distributed Systems. I love server farms, Big Data technology, playing with Apache projects and everything open source. I really dislike slow vpn connections and internet lag. I participated in Google Summer of Code for the Year 2017 and this blog post details the results of my work.
 
 ### Project Overview
 
@@ -41,9 +41,9 @@ Defining and scoring malware relationships requires a two stage process:
 
 1. Stage 1 for extracting and pre-processing malware features of interest
 
-2. Stage 2 to utilize the data from stage 1 for final relationships generation and scoring.
+2. Stage 2 to utilize the data from stage 1 for final relationships generation and scoring
 
-During this project, I developed set up the environment for running Stage 1.
+During this project, I wrote the code and set up the environment for running Stage 1.
 In stage 1, I look for meaningful connections between artifacts based on specific feature similarities. However, at this stage, these connections are still too raw to be considered
 proper final relationships. As a result, I use the term `primary relationship` for all the object pairs that share specific similarities of interest.
 
@@ -61,8 +61,7 @@ For example: A malicious executable may issue a call to a specific domain associ
 Each of the described connections above is a valid primary relationship.
 The following picture is a high level view of the potential relationships that one can encounter in our environment.
 
-![GitHub Logo](/img/dona/Relationship_Types.png)
-*Figure 2: High-level view of artifact relationships*
+![Relationship_Types](./img/dona/Relationship_Types.png)
 
 ##### A Few Words On The Data
 
@@ -92,7 +91,7 @@ domain_requests | CUCKOO
 yara_rules | Yara  
 
 
-The Knowledge Base table stores the relevant part of the features too. Due to the potentially large size, the feature content is compressed with gzip, hence the blob type. The de/compression methods we use were slightly adapted from the following [repository](https://gist.github.com/owainlewis/1e7d1e68a6818ee4d50e). The compression method in this repository is very fast, lightweight and incurs little to no speed penalties according to my tests.
+The Knowledge Base table stores the relevant part of the features too. Due to the potentially large size, the feature content is compressed with gzip, hence the blob type. The de/compression methods I use were slightly adapted from the following [repository](https://gist.github.com/owainlewis/1e7d1e68a6818ee4d50e). The compression method in this repository is very fast, lightweight and incurs little to no speed penalties according to my tests.
 
 The routine for generating the Knowledge Base is a batch routine that receives a list of object IDs. This routine can be initiated whenever the user wants to populate the table with new entries. Tests on our servers have proved the routine to be fairly efficient:
 
@@ -104,7 +103,7 @@ The routine for generating the Knowledge Base is a batch routine that receives a
 
 ##### Implementation: Primary Relationships Generation
 
-Primary Relationships are initial aggregations of the Knowledge Base data in order to generate and store connections between objects based on similarities of their feature values. More concretely, primary relationships store for each and every object in the database, a list of identifiers for other objects with which they share a feature similarity of sorts. For this implementation, I did not take into account duplicate results for the same object and same service. In this case, I specifically picked the newest result per object per service.
+Primary Relationships are initial aggregations of the Knowledge Base data in order to generate and store connections between objects based on similarities of their feature values. More concretely, primary relationships store, for each and every object in the database, a list of identifiers for other objects with whom they share a feature similarity. For this implementation, I did not take into account duplicate results for the same object and same service. In this case, I specifically picked the newest result per object per service.
 
 The storage for Primary Relationships was inspired in part by [TitanDB]("https://www.slideshare.net/knowfrominfo/titan-big-graph-data-with-cassandra"). For each object and each of its feature types, the primary relationships generation routine looks for matches, assigns a weight to each match, and stores the results as a Json array:
 
@@ -116,17 +115,14 @@ The storage for Primary Relationships was inspired in part by [TitanDB]("https:/
 }
 ```
 
-The weights for these primary relationships are defined depending on the feature type. For example, features like imphash, pehash and binary_signature are atomic values. For an exact same match for imphash and pehash, we assign the weight of 0.5, whereas an exact match for binary_signature we assign 1.0 . These weights are arbitrary values coming from an analyst (here: me). After extensive statistical analysis as well as [academic](https://www.usenix.org/legacy/event/leet09/tech/full_papers/wicherski/wicherski_html/)
-[research](https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html), I have found that objects that share these hashes have a considerable chance of being related one way or another. I chose to only look for exact matches and not cluster based on hashes. That is an approach that I tested as well, but I found that for Big Data, clustering based on the hash can create a lot of unnecessary noise for the final relationships. For features such as domain_requests and yara_rules, I use [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index) to calculate the weight.
+The weights for these primary relationships are defined depending on the feature type. Features like imphash, pehash and binary_signature are atomic values. For an exact same match for imphash and pehash, I assign the weight of 0.5. These weights are arbitrary values coming from an analyst (here: me). After extensive statistical analysis of my results as well as [research](https://www.usenix.org/legacy/event/leet09/tech/full_papers/wicherski/wicherski_html/) of
+[academic](https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html) literature, I have found that objects that share these hashes have a considerable chance of being related one way or another. In my implementation, I chose to only look for exact matches and not cluster based on hashes. I have already experimented with clustering based on malware hashes and I found that for Big Data, this approach can generate a lot of noise for the final relationships. Unlike the hashes, the binary_signature was rarely present in the PEInfo results. These signatures are important descriptive features and yet they are rarely extractable. For example, in one of our largest results tables, I could find at most a couple of hundreds of results with a binary_signature from a total of >500,000 PEInfo results. This suggests a relatively strong connection for those rare instances when they are present and match exactly to another sample's signature. As a result of these observations, I assign a weight of 1.0 for exact binary_signature matches. The rest of the features in my set, namely yara_rules and domain_requests, are sets of values, and I use [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index) to calculate the weight of a match.
 
 ##### Storage
 
 The following are the table schematics as generated in Cassandra.
 
-<p align="center">
-  <img src="/img/dona/storage.png" height="330" width="400">
-</p>
-*Figure 3: Table View*
+![storage_schema](./img/dona/storage.png)
 
 The table descriptions are as follows:
 
@@ -142,22 +138,23 @@ one entry per object.
 
 ### Good Times, Hard Times
 
-The experience that I gained while doing GSoC was extremely valuable. I had the chance to discuss with experts and get valuable insights on how to approach a problem, how to model my data, and how to make compromises between efficiency and accuracy. In retrospect, this may sound pretty straightforward and easy, but when you are a student thrown into a real-world data management environment, you may end up struggling for a while until you learn to let go of what's weighing you down (your biases). GSoC was tough, but the good kind. It is something that I would warmly recommend to anyone who wants to engage in the open source community, build something beautiful, and likes to struggle for their reward.   
+The experience that I gained while doing GSoC was extremely valuable. I had the chance to discuss with experts and get valuable insights on how to approach a problem, how to model my data, and how to make compromises between efficiency and accuracy. In retrospect, this may sound pretty straightforward and easy, but when you are a student thrown into a real-world data management environment, you may end up struggling for a while until you learn to let go of what's weighing you down (your biases). Performance improvement was also something that I had to struggle with during the project. Creating queries is easy, but one of the main goals of the project was to efficiently leverage the power of my cluster and database. I spent a lot of time improving my data modeling to make the queries as cheap as possible. My efforts were rewarded with a fast, scalable and almost linear querying performance for large tables.
 
+GSoC was tough, but the good kind of tough. It is something that I would warmly recommend to anyone who wants to engage in the open source community, build something beautiful, and who likes to struggle for their reward.   
 
 ### Future Work
 
 This project was a first shot at developing an operating and efficient analytics routine and there are still many more things that can be done to improve and expand it.
 
-1. Feature types needs to be expanded. This can happen either by introducing new services or by applying machine learning techniques to detect classes and similarities using some non-straightforward service results such as [Richheader](https://github.com/HolmesProcessing/RichHeader-Service_Collection) or [Objdump](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/objdump).
+1. The set of feature types needs to be expanded. This can happen either by introducing new services or by applying machine learning techniques to detect classes and similarities using some non-straightforward but promising service results such as [Richheader](https://github.com/HolmesProcessing/RichHeader-Service_Collection) and [Objdump](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/objdump).
 
-2. Yara can be a very powerful source of information for malicious similarity and even the degree of that similarity. For that purpose, weighing two yara results using Jaccard Similarity is the bare minimum. Rules do not have equal weigh and meaningfulness: depending on the inner conditions, some rules are more relevant than others. It may be of interest to look deeper into yara, their ruleset and create a service that provides a more detailed yara similarity output. Depending on the results, such a system could even be a standalone final relationships generator for binaries.
+2. Yara can be a very powerful source of information for similarity and, depending on the level of scrutiny, it can even go so far as to provide the degree of that similarity. Weighing two yara results using Jaccard Similarity is the bare minimum one can do to calculate similarity. Not all rules are made equal. Depending on the inner conditions, some rules are more relevant than others. It may be of interest to look deeper into yara, the content of their rulesets and create a service that provides a more detailed yara similarity output. Depending on quality of the rules and the accuracy of the results, such a system could even be a standalone final relationships generator for binaries.
 
-3. My application needs to be integrated with a pipeline that automates the process for Knowledge Base and Primary Relationships generation processes. As it stands, [Holmes-Analytics](https://github.com/HolmesProcessing/Holmes-Analytics) is where further integration of this codebase needs to happen.
+3. My application needs to be integrated with a pipeline that automates the process for Knowledge Base and Primary Relationships generation. As it stands, [Holmes-Analytics](https://github.com/HolmesProcessing/Holmes-Analytics) is where my code needs to integrate.
 
 ### Conclusions
 
-Overall, I am happy with the results of my project, since I managed to fulfill all of my main goals. There is still room for expansion and further improvements, some of which I detailed in the previous section. However, barring future extensions, I think the current iteration of the project is very sound in terms of logic and the performance is probably the best that we can get with the current setup.
+I managed to fulfill all of my main goals so I am happy with the results of my project. There is still room for expansion and further improvements, some of which I detailed in the previous section. However, barring future extensions, I think the current iteration of the project is very sound in terms of logic and the performance is probably the best that we can get with the current setup.
 
 ### Acknowledgements
 
