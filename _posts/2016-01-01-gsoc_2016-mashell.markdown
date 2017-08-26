@@ -1,5 +1,5 @@
 ---
-title: Project Title
+title: Holmes-Gateway & Centralized Service Configuration for Holmes-Totem
 subtitle: Project Subtitle
 layout: default
 modal-id: 2
@@ -8,12 +8,94 @@ date: 2016-01-01
 img: temp.svg
 thumbnail: temp.svg
 alt: license-img
-repository: https://github.com/HolmesProcessing/gsoc_
+repository: https://github.com/HolmesProcessing/Holmes-Gateway
 documentation: 
 license: 
 
 ---
 
-##### Overview
+#### About Me
+My name is Marcel Schumacher. I am currently enrolled to a Master's program of Computer Science at the Technical University of Munich.
 
-Content Goes Here
+This year I applied to a [Google Summer of Codes (GSOC) project](https://summerofcode.withgoogle.com/archive/2016/projects/5106365001367552/) for the organization [The Honeynet Project](https://www.honeynet.org/) and got accepted. In this blog I will share my experience with GSOC and the work with the Open Source project and present my results.
+
+#### About GSOC
+GSOC is a project of Google, where students can apply to work on open source projects of partnering organizations over the course of 3 months. For this purpose, every accepted student is assigned at least one mentor from the corresponding organization to advise the student. With this project Google aims at helping the open source projects with the implementation of new features and introducing students to the world of open source and helping them find their way to becoming contributors to these projects.
+
+Over the last three months I had the opportunity to be part of GSOC and work my way to develop a whole new part of the open source project [Holmes Processing](https://holmesprocessing.github.io/).
+Holmes Processing is a tool used for large-scale analysis of malware. It consists of a distributed architecture with many different components that allow the system to scale horizontally.
+
+#### Overview
+My project consisted of two separate parts:
+
+Holmes Processing was missing a common component as the interface to the outside world. Part one of my project consisted of developing Holmes Gateway. This component manages interaction with users and gives organizations the opportunity to execute analysis-tasks on the malware-samples of partnering organizations without the need of sharing the samples.
+
+Furthermore Holmes Processing utilizes many independent services which execute the analysis tasks. Each service has a configuration-file which specifies how it ought to behave. Because of Holmes Processing's distributed nature, it is desirable to be able to configure services centrally. Part two of my project consisted of developing a system which allowed users to store service configurations in a central place and load them dynamically.
+
+In the following I will give a more in-depth view about the two parts and my results.
+
+#### Holmes-Gateway
+As I already wrote above, the first part of my project was the creation of [Holmes-Gateway](https://github.com/HolmesProcessing/Holmes-Gateway), which is a whole new part of Holmes Processing. This new component serves the following main purposes:
+
+* Accepting and handling tasking requests.
+* Accepting requests for uploading new malware samples and forward the request to [Holmes-Storage](https://github.com/HolmesProcessing/Holmes-Storage).
+* Allow for automatic task-execution upon sample upload.
+* Check user credentials for both types of requests.
+
+While most of these are straight forward, the first of these points requires some additional explanation:
+
+In the previous system, if a user wanted to execute a certain service task (e.g. extract static information about a PE-file by executing the PEInfo-service on it), he had to push a JSON-object describing the task directly into a [RabbitMQ](https://www.rabbitmq.com/)-queue. [Holmes-Totem](https://github.com/HolmesProcessing/Holmes-Totem) listens on that queue and starts the corresponding service with the corresponding parameters.
+With the release of Holmes-Gateway, there are various improvements to this workflow:
+
+* The user has to authenticate himself first.
+* The tasking structure is validated before pushing it to RabbitMQ.
+* Holmes-Gateway allows the admin to define different queues for different service tasks. This means, it is possible to have separated queues for services which usually take a large amount of time and such that usually only take a small amount of time. Thus the former sort does not block the latter sort.
+* Holmes-Gateway allows different organizations to perform tasks on malware-samples of partnering organizations without getting access to these samples.
+
+In order to achieve these improvements, there are two separate parts of Holmes-Gateway, called the "Master-Gateway" and the "Slave-Gateway" (sometimes also referred to as "Organizational Gateway"). The user does not directly communicate with RabbitMQ anymore. Instead he sends a list of tasking-JSON-objects via HTTPs to his organization's instance of Master-Gateway, along with his credentials. The Master-Gateway has a configuration, which allows the admin to define a routing of tasks based on the task's source.
+
+Based on this configuration, the Master-Gateway chooses a Slave-Gateway of a partnering organization (or its own organization), which supposedly has access to the source, the sample belongs to. The Master-Gateway then batches tasks for the same Slave-Gateway together, creates a ticket valid only for this tasking-list, signs it with his private key, encrypts the task-list and the ticket, and sends everything to the chosen Slave-Gateway.
+
+The Slave-Gateway decrypts everything and checks the ticket. If everything is alright, it validates the task and finally pushes it into the queue, which is configured for the corresponding service. From there, the task is picked up by Holmes-Totem and processed as before.
+This whole workflow is visualized in the picture below.
+
+
+![Workflow](https://1.bp.blogspot.com/-mSX3aeQj63o/V7m7DpU3HeI/AAAAAAAACJs/I85YSa5rnssLUh07kvp7Zp9y48fc2b8_gCK4B/s400/GSOC%2BEngineering%2BPlan.png)
+
+In addition to the implementation and design of Holmes-Gateway, my task included writing CLI-tools to help with executing these tasks. These tools can be found in [Holmes-Toolbox](https://github.com/HolmesProcessing/Holmes-Toolbox). For detailed information about how to use these tools, I refere the reader to the Readme-files in the corresponding GitHub-Repositories.
+
+#### Centralized Service Configuration For Holmes-Totem
+The second, much smaller part of my GSOC-Project consisted in the creation of a system to allow an admin to store the configurations for the analysis-services of [Holmes-Totem](https://github.com/HolmesProcessing/Holmes-Totem) in a central location and make the system automatically load it from there upon upstart.
+
+When starting the project, the plan originally was to create a central key-value store with [libkv](https://github.com/docker/libkv) and [etcd](https://github.com/coreos/etcd), [Consul](https://www.consul.io/) or [Apache Zookeeper](https://zookeeper.apache.org/).  However, when it came to implementation, this turned out to be unnecessary.
+
+One reason for this was, that the configuration files of the services should usually not change too often, since they only contain information about where to find certain other components and what ports to listen on, etc.
+
+Instead, [Holmes-Storage](https://github.com/HolmesProcessing/Holmes-Storage) was extended to allow for storing configuration-files (uploaded over HTTP) into its database and query them (also over HTTP).
+
+This way, the only thing left to do was modifying the Dockerfiles, which are responsible for starting the individual services, to accept an argument specifying the location of the file service.conf. The docker-compose-file therefore takes a look at environment variables pointing to the running instance of Holmes-Storage and sets these arguments correctly for each service. By doing this, whenever the containers are built, the configuration-files are pulled from the server.
+
+#### My Conclusions About GSOC
+I really enjoyed being part of GSOC. I learned a lot about Holmes Processing and got to learn Golang, a programming language, which was completely new to me. Designing the Gateway turned out to be quite challenging but I am happy with the results. At this point I want to thank my two mentors for helping me with finding my way and guiding me through GSOC.
+
+Below is a list of the repositories I contributed to, and my pull requests.
+
+For the first part (Holmes-Gateway):
+*Holmes-Gateway*:
+* https://github.com/HolmesProcessing/Holmes-Gateway/pull/1
+* https://github.com/HolmesProcessing/Holmes-Gateway/pull/2
+* https://github.com/HolmesProcessing/Holmes-Gateway/pull/3
+
+*Holmes-Toolbox*:
+* https://github.com/HolmesProcessing/Holmes-Toolbox/pull/11
+* https://github.com/HolmesProcessing/Holmes-Toolbox/pull/12
+
+For the second part (Centralized Service Configuration for Holmes-Totem):
+
+*Holmes-Storage*:
+* https://github.com/HolmesProcessing/Holmes-Storage/pull/29
+* https://github.com/HolmesProcessing/Holmes-Storage/pull/25
+
+*Holmes-Totem*:
+* https://github.com/HolmesProcessing/Holmes-Totem/pull/108
+* https://github.com/HolmesProcessing/Holmes-Totem/pull/119
