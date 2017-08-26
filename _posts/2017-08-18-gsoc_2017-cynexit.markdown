@@ -31,7 +31,7 @@ Holmes-Analytics is a scheduler for various data-driven tasks like machine learn
 Holmes-Analytics is written in Scala using, as much as possible, the actor model provided by akka. If you are not familiar with this concept you can check out this [good and short introduction from Brian Storti](http://www.brianstorti.com/the-actor-model/).
 HA currently consists of nine actors to split the work and responsibilities in a logical fashion. To give you a better overview we will introduce each worker briefly. 
 
-![actor model](/img/cynexit/holmes-analytics-actor-layout-v0.3.png){: .img-responsive}
+![actor model](img/cynexit/holmes-analytics-actor-layout-v0.3.png){: .img-responsive}
 *The actor layout as a diagram*
 {: .modal-descriptive-image}
 
@@ -58,7 +58,7 @@ This whole system allows us to automate a lot of processes. An example would be 
 
 Generally speaking what we have here is a fully automatable processing pipeline from start to finish designed to give security researchers a helping hand by removing a lot of DevOps overhead.
 
-![actor model](/img/cynexit/holmes-analytics-frontend-alpha.png){: .img-responsive}
+![actor model](img/cynexit/holmes-analytics-frontend-alpha.png){: .img-responsive}
 *Screenshot of the frontend in a very early stage*
 {: .modal-descriptive-image}
 
