@@ -2,7 +2,7 @@
 title: Holmes Automated Malware Relationships
 subtitle: Defining and Modeling Relationships
 layout: default
-modal-id: 3
+modal-id: 6
 category: gsoc2017
 date: 2017-08-25
 img: mal1.svg
