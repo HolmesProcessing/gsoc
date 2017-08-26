@@ -1,6 +1,6 @@
 ---
-title: Building Static analysis Services for Holmes Processing
-subtitle: Creating Template and Documentation
+title: Holmes Totem Example Services
+subtitle: Static Template and PE Extraction
 layout: default
 modal-id: 2
 category: gsoc2017
@@ -10,13 +10,13 @@ thumbnail: manohar.svg
 alt: license-img
 repository: https://github.com/HolmesProcessing/Holmes-Totem
 documentation: https://docs.holmesprocessing.com/en/latest/rst/components/holmes-totem/services/index.html
-license: 
+license: https://raw.githubusercontent.com/HolmesProcessing/Holmes-Totem/master/LICENSE
 
 ---
 
 # About Me
 
-My name is Manohar Reddy. Currently studying a 4th-year Bachelors at IIIT Vadodara. I am mainly interested in distributed computing and kernel development. Holmes Processing is super fun because everything that I learned in my course curriculum algorithms, OS, DBMS, AI etc.. is implemented in here. Throughout this GSoC, I've learned a lot of things about executable both PE and ELF files. Also, about how a process gets loaded into memory. This blog is a summary of tasks that I achieved as a part of Google Summer of Code 2017
+My name is Manohar Reddy. Currently studying a 4th-year Bachelors at IIIT Vadodara. I am mainly interested in distributed computing and kernel development. Holmes Processing is super fun because everything that I learned in my course curriculum- algorithms, OS, DBMS, AI etc.. is implemented in here. Throughout this GSoC, I've learned a lot of things about executable both PE and ELF files. Also, about how a process gets loaded into memory. This blog is a summary of tasks that I achieved as a part of Google Summer of Code 2017
 
 # Overview
 
@@ -50,7 +50,15 @@ Contributions related to PEmeta: https://github.com/HolmesProcessing/Holmes-Tote
 
 ##### LIBPE
 
-Building [libpe](https://github.com/merces/libpe) is one of the biggest parts of the project. Before I choose to use the library, it has a very basic implementation where it only implements interfaces to analyze headers. I extended libpe to support everything that PEV supports and used this library as the analyzer library for PEMeta.
+Building [libpe](https://github.com/merces/libpe) is one of the biggest parts of the project. Before I choose to use the library, it has a very basic implementation where it only implements interfaces to analyze headers. I should move most of the intelligence that is present in PEV to libpe so that other could benefit. The toughest part is the API design. I have to design C structs both meaningfully and they should be able to tell the kind of error. This is error returning capability is very much needed so that we can raise a custom HTTP error. So I figured out a simple design. That suite the needs of both PEV and Holmes.
+```
+typedef struct {
+	pe_err_e err;
+	uint32_t dll_count;
+	pe_imported_dll_t *dlls; // array of DLLs
+} pe_imports_t;
+```
+I find this challenge similar to schema design in DBMS. I really enjoyed doing this. Next, I extended libpe to support everything that PEV supports and used this library as the analyzer library for PEMeta.
 
 Contributions related to libpe: https://github.com/merces/libpe/pull/14
 
