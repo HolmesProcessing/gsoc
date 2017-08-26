@@ -16,7 +16,7 @@ license: https://github.com/cli0/gsoc_relationship/blob/master/LICENSE
 
 ### About me
 
-My name is Donika Mirdita. Currently, I am a full-time masters student at the Technical University of Munich, but sometimes I moonlight as a security and machine learning amateur researcher. My areas of interest are IT Security, Machine Learning and Distributed Systems. I love server farms, Big Data technology, playing with Apache projects and everything open source. I really dislike slow vpn connections and internet lag. I participated in Google Summer of Code for the Year 2017 and this blog post details the results of my work.
+My name is Donika Mirdita. Currently, I am a full-time masters student at the Technical University of Munich, but sometimes I moonlight as an amateur security and machine learning researcher. My areas of interest are IT Security, Machine Learning and Distributed Systems. I love server farms, Big Data technology, playing with Apache projects and everything open source. I really dislike slow vpn connections and internet lag. I participated in Google Summer of Code for the Year 2017 and this blog post details the results of my work.
 
 ### Project Overview
 
