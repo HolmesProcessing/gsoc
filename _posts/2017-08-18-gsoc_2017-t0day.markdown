@@ -2,7 +2,7 @@
 title: Holmes Automated Malware Relationships
 subtitle: Neural Network and Visualization
 layout: default
-modal-id: 4
+modal-id: 7
 category: gsoc2017
 date: 2017-08-26
 img: temp.svg
