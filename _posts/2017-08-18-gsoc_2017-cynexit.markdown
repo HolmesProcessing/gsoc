@@ -8,7 +8,7 @@ date: 2017-01-01
 img: investigation.svg
 thumbnail: investigation.svg
 alt: license-img
-repository: https://github.com/HolmesProcessing/gsoc_
+repository: https://github.com/HolmesProcessing/Holmes-Analytics
 documentation: 
 license: 
 
@@ -16,11 +16,11 @@ license:
 
 
 ### Preamble
-Back in the days when Holmes-Processing was born it only consisted of one tool, Totem. Totem excels at feature extraction and is still one of the most flexible and streamlined tools for this job on the market. After playing with Totem for a while it was obvious that we needed to get away from the single threaded python script that acted as a webserver for Totem for pull files from and also away from simply dumping results into mongoDB.
+Back in the days when Holmes-Processing was born, it only consisted of one tool, [Totem](https://github.com/HolmesProcessing/Holmes-Totem). Totem excels at feature extraction and is still one of the most flexible and streamlined tools for this job on the market. After playing with Totem for a while it was obvious that we needed to get away from the single threaded python script that acted as a webserver for Totem for pull files from and also away from simply dumping results into mongoDB.
 
-To tackle both issues we needed a general-purpose storage tool that would abstract all of that away by providing a simple API to retrieve and save files as well as data from multiple backends. This led to the development of Holmes-Storage to make it easier for admins and researchers alike to work with Totem and its results since you could just switch from mongoDB to Cassandra and from files on a local disk to S3 or Minio without touching Totem or anything attached to the rest of the infrastructure.
+To tackle both issues, we needed a general-purpose storage tool that would abstract all of that away by providing a simple API to retrieve and save files as well as support data from multiple backends. This led to the development of [Holmes-Storage](https://github.com/HolmesProcessing/Holmes-Storage) to make it easier for admins and researchers alike to work with Totem and its results since you could just switch from mongoDB to Cassandra and from files on a local disk to S3 or Minio without touching Totem or anything attached to the rest of the infrastructure.
 
-A few other smaller tools followed to make Holmes-Processing more feasible for "everyday use" like Gateway and a simple frontend (that quickly got outdated), but one big piece was always missing: a native way to handle and schedule our own machine learning tasks based on the data we extracted. This is the reason Holmes-Analytics was developed.
+A few other smaller tools followed to make Holmes-Processing more feasible for "everyday use" like [Gateway](https://github.com/HolmesProcessing/Holmes-Gateway) and a simple [frontend](https://github.com/HolmesProcessing/archive-Holmes-Frontend) (that quickly got outdated), but one big piece was always missing: a native way to handle and schedule our own machine learning tasks based on the data we extracted. This is the reason Holmes-Analytics was developed.
 
 
 ### The Project
@@ -28,7 +28,7 @@ Holmes-Analytics is a scheduler for various data-driven tasks like machine learn
 
 
 ### Technical Deep Dive
-Holmes-Analytics is written in Scala using the actor model provided by akka as much as possible. If you are not familiar with this concept you can check out this good and short introduction from Brian Storti.
+Holmes-Analytics is written in Scala using, as much as possible, the actor model provided by akka. If you are not familiar with this concept you can check out this [good and short introduction from Brian Storti](http://www.brianstorti.com/the-actor-model/).
 HA currently consists of nine actors to split the work and responsibilities in a logical fashion. To give you a better overview we will introduce each worker briefly. 
 
 ![actor model](/img/cynexit/holmes-analytics-actor-layout-v0.3.png){: .img-responsive}
@@ -68,5 +68,5 @@ Besides this, documentation should be improved by providing a simple "quick star
 
 
 ##### About the author
-Christian von Pentz is currently pursuing his master in computer science at the Technical University of Munich and works at the chair for IT Security. He teaches the Web Application Security course, focuses on large scale malware analysis, and has spoken at DCC. He is also an avid CTF player at hxp and core contributor of Holmes-Processing. He spends his free time building impractical desktop computers.
+Christian von Pentz is currently pursuing his master in computer science at the [Technical University of Munich](https://www.tum.de/) and works at the chair for IT Security. He teaches the Web Application Security course, focuses on large scale malware analysis, and has spoken at DCC. He is also an avid CTF player at [hxp](https://hxp.io) and core contributor of Holmes-Processing. He spends his free time building impractical desktop computers.
 
