@@ -16,7 +16,7 @@ license: https://github.com/cli0/gsoc_relationship/blob/master/LICENSE
 
 ### About me
 
-My name is Dona. Currently, I am a full-time masters student at the Technical University of Munich, but sometimes I moonlight as a security and machine learning amateur researcher. My areas of interest are IT Security, Machine Learning and Distributed Systems. I love server farms, Big Data technology, playing with Apache projects and everything open source. I really dislike slow vpn connections and internet lag. I participated in Google Summer of Code for the Year 2017 and this blog post details the results of my work.
+My name is Donika Mirdita. Currently, I am a full-time masters student at the Technical University of Munich, but sometimes I moonlight as a security and machine learning amateur researcher. My areas of interest are IT Security, Machine Learning and Distributed Systems. I love server farms, Big Data technology, playing with Apache projects and everything open source. I really dislike slow vpn connections and internet lag. I participated in Google Summer of Code for the Year 2017 and this blog post details the results of my work.
 
 ### Project Overview
 
@@ -62,7 +62,6 @@ Each of the described connections above is a valid primary relationship.
 The following picture is a high level view of the potential relationships that one can encounter in our environment.
 
 ![Relationship_Types](./img/dona/Relationship_Types.png)
-*Figure 2: High-level view of artifact relationships*
 
 ##### A Few Words On The Data
 
@@ -123,10 +122,7 @@ The weights for these primary relationships are defined depending on the feature
 
 The following are the table schematics as generated in Cassandra.
 
-<p align="center">
-  <img src="./img/dona/storage.png" height="330" width="400">
-</p>
-*Figure 3: Table View*
+![storage_schema](./img/dona/storage.png)
 
 The table descriptions are as follows:
 
@@ -149,15 +145,15 @@ The experience that I gained while doing GSoC was extremely valuable. I had the 
 
 This project was a first shot at developing an operating and efficient analytics routine and there are still many more things that can be done to improve and expand it.
 
-1. Feature types needs to be expanded. This can happen either by introducing new services or by applying machine learning techniques to detect classes and similarities using some non-straightforward service results such as [Richheader](https://github.com/HolmesProcessing/RichHeader-Service_Collection) or [Objdump](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/objdump).
+1. The set of feature types needs to be expanded. This can happen either by introducing new services or by applying machine learning techniques to detect classes and similarities using some non-straightforward but promising service results such as [Richheader](https://github.com/HolmesProcessing/RichHeader-Service_Collection) or [Objdump](https://github.com/HolmesProcessing/Holmes-Totem/tree/master/src/main/scala/org/holmesprocessing/totem/services/objdump).
 
-2. Yara can be a very powerful source of information for malicious similarity and even the degree of that similarity. For that purpose, weighing two yara results using Jaccard Similarity is the bare minimum. Rules do not have equal weigh and meaningfulness: depending on the inner conditions, some rules are more relevant than others. It may be of interest to look deeper into yara, their ruleset and create a service that provides a more detailed yara similarity output. Depending on the results, such a system could even be a standalone final relationships generator for binaries.
+2. Yara can be a very powerful source of information for malicious similarity and depending on the level of scrutiny, it can even go so far as providing the degree of that similarity. Weighing two yara results using Jaccard Similarity is the bare minimum one can do to calculate similarity. Not all rules are made equal. Depending on the inner conditions, some rules are more relevant than others. It may be of interest to look deeper into yara, the content of their rulesets and create a service that provides a more detailed yara similarity output. Depending on the accuracy of results, such a system could even be a standalone final relationships generator for binaries.
 
-3. My application needs to be integrated with a pipeline that automates the process for Knowledge Base and Primary Relationships generation processes. As it stands, [Holmes-Analytics](https://github.com/HolmesProcessing/Holmes-Analytics) is where further integration of this codebase needs to happen.
+3. My application needs to be integrated with a pipeline that automates the process for Knowledge Base and Primary Relationships generation processes. As it stands, [Holmes-Analytics](https://github.com/HolmesProcessing/Holmes-Analytics) is where my code needs to integrate.
 
 ### Conclusions
 
-Overall, I am happy with the results of my project, since I managed to fulfill all of my main goals. There is still room for expansion and further improvements, some of which I detailed in the previous section. However, barring future extensions, I think the current iteration of the project is very sound in terms of logic and the performance is probably the best that we can get with the current setup.
+I managed to fulfill all of my main goals so I am happy with the results of my project. There is still room for expansion and further improvements, some of which I detailed in the previous section. However, barring future extensions, I think the current iteration of the project is very sound in terms of logic and the performance is probably the best that we can get with the current setup.
 
 ### Acknowledgements
 
