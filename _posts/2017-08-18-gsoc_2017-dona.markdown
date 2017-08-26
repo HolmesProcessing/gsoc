@@ -4,9 +4,9 @@ subtitle: Defining and Modeling Relationships
 layout: default
 modal-id: 3
 category: gsoc2017
-date: 2017-01-01
-img: dona.svg
-thumbnail: dona.svg
+date: 2017-08-25
+img: mal1.svg
+thumbnail: mal1.svg
 alt: license-img
 repository: https://github.com/cli0/gsoc_relationship
 documentation: https://github.com/cli0/gsoc_relationship/blob/primary_relationships/README.md
@@ -41,9 +41,9 @@ Defining and scoring malware relationships requires a two stage process:
 
 1. Stage 1 for extracting and pre-processing malware features of interest
 
-2. Stage 2 to utilize the data from stage 1 for final relationships generation and scoring.
+2. Stage 2 to utilize the data from stage 1 for final relationships generation and scoring
 
-During this project, I developed set up the environment for running Stage 1.
+During this project, I wrote the code and set up the environment for running Stage 1.
 In stage 1, I look for meaningful connections between artifacts based on specific feature similarities. However, at this stage, these connections are still too raw to be considered
 proper final relationships. As a result, I use the term `primary relationship` for all the object pairs that share specific similarities of interest.
 
@@ -61,7 +61,7 @@ For example: A malicious executable may issue a call to a specific domain associ
 Each of the described connections above is a valid primary relationship.
 The following picture is a high level view of the potential relationships that one can encounter in our environment.
 
-![GitHub Logo](/img/dona/Relationship_Types.png)
+![Relationship_Types](./img/dona/Relationship_Types.png)
 *Figure 2: High-level view of artifact relationships*
 
 ##### A Few Words On The Data
@@ -124,7 +124,7 @@ The weights for these primary relationships are defined depending on the feature
 The following are the table schematics as generated in Cassandra.
 
 <p align="center">
-  <img src="/img/dona/storage.png" height="330" width="400">
+  <img src="./img/dona/storage.png" height="330" width="400">
 </p>
 *Figure 3: Table View*
 
