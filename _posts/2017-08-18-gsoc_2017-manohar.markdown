@@ -26,10 +26,11 @@ This project tries to lower the bar of entry into Holmes Processing by creating 
 
 A Totem Static Service is a web server which does the analysis for a short period of time. Currently, a Totem Static Service has 4 files. 
 
-- `HelloREST.Scala` to commuinicate with Totem.
-- `HelloWorld.conf` contains Service configuration.
-- `Helloworld.{lang}` to create a webserver and logic to analyze input file.
-- `Dockerfile` for containerization.
+1. `HelloREST.Scala` to commuinicate with Totem.
+2. `HelloWorld.conf` contains Service configuration.
+3. `Helloworld.{lang}` to create a webserver and logic to analyze input file.
+4. `Dockerfile` for containerization.
+{: .text-left .spaced-list}
 
 All the Services have a lot of common code. I put together all the common code and created a template out of it. Using my Template engine, I created 2 services and about documentation about Totem Services.
 
@@ -51,6 +52,7 @@ Contributions related to PEmeta: https://github.com/HolmesProcessing/Holmes-Tote
 ##### LIBPE
 
 Building [libpe](https://github.com/merces/libpe) is one of the biggest parts of the project. Before I choose to use the library, it has a very basic implementation where it only implements interfaces to analyze headers. I should move most of the intelligence that is present in PEV to libpe so that other could benefit. The toughest part is the API design. I have to design C structs both meaningfully and they should be able to tell the kind of error. This is error returning capability is very much needed so that we can raise a custom HTTP error. So I figured out a simple design. That suite the needs of both PEV and Holmes.
+
 ```
 typedef struct {
 	pe_err_e err;
@@ -58,6 +60,8 @@ typedef struct {
 	pe_imported_dll_t *dlls; // array of DLLs
 } pe_imports_t;
 ```
+{: .text-left}
+
 I find this challenge similar to schema design in DBMS. I really enjoyed doing this. Next, I extended libpe to support everything that PEV supports and used this library as the analyzer library for PEMeta.
 
 Contributions related to libpe: https://github.com/merces/libpe/pull/14
@@ -83,6 +87,7 @@ The comparision table of the 2 services that analyses PE file is given below.
 |acb8d3da| ARP.exe |  15.8ms |635.1ms |54.8ms|
 |44bd81cb|7z1514.exe| 249.04ms |1261.5ms |133.9ms|
 |Average||250.1ms|2232.3ms|242.5ms|
+{: class="table"}
 
 The performance of new version of PEINFO has improved a lot. PEMeta and PEINFO v2 performs equally.
 
