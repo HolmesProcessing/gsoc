@@ -16,7 +16,7 @@ license: https://github.com/cli0/gsoc_relationship/blob/master/LICENSE
 
 ### About me
 
-My name is Donika Mirdita. Currently, I am a full-time masters student at the Technical University of Munich, but sometimes I moonlight as an amateur security and machine learning researcher. My areas of interest are IT Security, Machine Learning and Distributed Systems. I love server farms, Big Data technology, playing with Apache projects and everything open source. I really dislike slow vpn connections and internet lag. I participated in Google Summer of Code for the Year 2017 and this blog post details the results of my work.
+My name is Donika Mirdita. Currently, I am a full-time master's student at the Technical University of Munich, but sometimes I moonlight as an amateur security and machine learning researcher. My areas of interest are IT Security, Machine Learning and Distributed Systems. I love server farms, Big Data technology, playing with Apache projects and everything open source. I really dislike slow VPN connections and internet lag. I participated in Google Summer of Code for the Year 2017 and this blog post details the results of my work.
 
 ### Project Overview
 
@@ -35,7 +35,7 @@ This project was developed as a service for [Holmes Processing](https://github.c
 
 ##### Defining Malware Relationships
 
-Defining and scoring malware relationships in a Big Data environment requires a two stage process:
+Defining and scoring malware relationships in a Big Data environment requires a two-stage process:
 
 1. Stage 1 for extracting and pre-processing malware features of interest
 2. Stage 2 to utilize the data from Stage 1 for final relationships generation and scoring
@@ -52,7 +52,7 @@ Intelligent analytic systems are now part of the Big Data ecosystem. Meaningful 
 
 ##### Primary Relationships
 
-There are 4 potential types of artifacts in our database: IP Addresses, Domains, Files, and Binary Executables. All of these artifact, despite their different formats, can have
+There are 4 potential types of artifacts in our database: IP Addresses, Domains, Files, and Binary Executables. These artifact, despite their different formats, can have
 meaningful connections or `relationships` with one another.
 
 For example: A malicious executable may issue a call to a specific domain associated with one or more IPs. In turn, these IPs might be related to some bot campaign. Assuming these connections can be detected in your Zoo in some form, you have already identified several primary relationships:
@@ -62,15 +62,15 @@ For example: A malicious executable may issue a call to a specific domain associ
 3. Executable_1 <-> IP_3
 {: .text-left .spaced-list}
 
-Each of the described connections above is a valid primary relationship. However, the disclaimer in the previous section remains: the primary relationships do not automatically map to final relationships. Primary relationships can also be circumstancial, and that is fine. Historical analytic records should never be deleted (unless they have a specific Time To Live threshold) and circumstancial connections can also be used to generate historical time series.
+Each of the described connections above is a valid primary relationship. However, the disclaimer in the previous section remains: the primary relationships do not automatically map to final relationships. Primary relationships can also be circumstantial, and that is fine. Historical analytic records should never be deleted (unless they have a specific Time To Live (TTL) threshold) and circumstantial connections can also be used to generate historical time series.
 
-##### A Few Words On The Data
+##### A Few Words on The Data
 
 The data that I use for my analytics contains exclusively Totem results. Every object is uniquely identified by their sha256 hash and for each object, the system runs multiple analytic services. The system allows the existence of duplicate results for the same object and service, because for many services the results can change in time. This change can occur when the service itself is patched, expanded or improved; when antivirus signatures get updated etc.
 
 ##### Implementation: Knowledge Base Generation
 
-The service results contain a lot of data and not all of that data is necessary for meaningful analytics. In addition to that, I aim to organize the data in easily queryable and parsed pieces of information in order to avoid unnecessary parsing and filtering during a client request. As a result, I first create a Knowledge Base table which contains every feature of interest for each object and result in the database. This table does not ignore or filter duplicate results. The main purpose of this table is to be an authoritative and easily expandable repository for all the information relevant for analytics. The second purpose of this repository is to improve query time by forgoing the need for expensive parsing and searching for every relationship request. This table can be generated in bulk during service downtime, and as a result not burden a client wishing to calculate relationships with extra waiting time. The Knowledge Base entries have the following format:
+The service results contain a lot of data and not all that data is necessary for meaningful analytics. In addition to that, I aim to organize the data in easily queryable and parsed pieces of information to avoid unnecessary parsing and filtering during a client request. As a result, I first create a Knowledge Base table which contains every feature of interest for each object and result in the database. This table does not ignore or filter duplicate results. The main purpose of this table is to be an authoritative and easily expandable repository for all the information relevant for analytics. The second purpose of this repository is to improve query time by forgoing the need for expensive parsing and searching for every relationship request. This table can be generated in bulk during service downtime, and as a result not burden a client wishing to calculate relationships with extra waiting time. The Knowledge Base entries have the following format:
 
 ```
 analytics_knowledge_base
@@ -106,7 +106,7 @@ Knowledge Base generation is a batch routine that requires a list of object IDs 
 
 ##### Implementation: Primary Relationships Generation
 
-Primary Relationships are initial aggregations of the Knowledge Base data in order to generate and store connections between objects based on the similarities of their feature values. More concretely, primary relationships store, for each and every object in the database, identifiers of other objects with whom they share a feature similarity. For this implementation, I did not take into account duplicate results for the same object and same service. In this case, I specifically picked the newest result per object per service to generate primary relationships.
+Primary Relationships are initial aggregations of the Knowledge Base data to generate and store connections between objects based on the similarities of their feature values. More concretely, primary relationships store, for every object in the database, identifiers of other objects with whom they share a feature similarity. For this implementation, I did not consider duplicate results for the same object and same service. In this case, I specifically picked the newest result per object per service to generate primary relationships.
 
 The storage for Primary Relationships was inspired in part by [TitanDB]("https://www.slideshare.net/knowfrominfo/titan-big-graph-data-with-cassandra"). For each object and each of its feature types, the primary relationships generation routine looks for matches, assigns a weight to each match, and stores the weighted matches as a Json array:
 
@@ -122,7 +122,7 @@ The storage for Primary Relationships was inspired in part by [TitanDB]("https:/
 The weights for these primary relationships are defined depending on the feature type, existing external research and observations from the analyst. Features like `imphash`, `pehash` and `binary_signature` are atomic values. For an exact same match for imphash and pehash, I assign the weight of 0.5. These weights are arbitrary values coming from an analyst (here: me). After extensive statistical analysis of my results as well as [research](https://www.usenix.org/legacy/event/leet09/tech/full_papers/wicherski/wicherski_html/) of
 [academic](https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html) literature, I have found that objects that share these hashes have a considerable chance of being related one way or another. In my implementation, I chose to only look for exact matches and not cluster based on hashes. I have already experimented with clustering based on malware hashes and I found that for Big Data, this approach can generate a lot of noise for the final relationships.
 
-Unlike the hashes, the binary_signature was rarely present in the PEInfo results. These signatures are important descriptive features and yet they are rarely extractable. For example, in one of our largest results table, I could find at most a couple of hundreds of results with a binary_signature from a total of >500,000 PEInfo results. This suggests a relatively strong connection for those rare instances that have their binary_signatures *and* match exactly to another sample's signature. As a result of these observations, I assign a weight of 1.0 for exact binary_signature matches. The rest of the features in my set, namely `yara_rules` and `domain_requests`, are sets of values (rules and urls respectively), and I use [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index) to calculate the weight of a match.
+Unlike the hashes, the binary_signature was rarely present in the PEInfo results. These signatures are important descriptive features and yet they are rarely extractable. For example, in one of our largest results table, I could find at most a couple of hundreds of results with a binary_signature from a total of >500,000 PEInfo results. This suggests a relatively strong connection for those rare instances that have their binary_signatures *and* match exactly to another sample's signature. Because of these observations, I assign a weight of 1.0 for exact binary_signature matches. The rest of the features in my set, namely `yara_rules` and `domain_requests`, are sets of values (rules and urls respectively), and I use [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index) to calculate the weight of a match.
 
 ##### Storage
 
@@ -139,7 +139,7 @@ The following figure shows the storage schema for the data that I generate in my
 
 ### Good Times, Hard Times
 
-The experience that I gained while doing GSoC was extremely valuable. I had the chance to discuss with experts and get valuable insights on how to efficiently approach a problem, how to model my data, and how to make compromises between efficiency and accuracy. In retrospect, this may sound pretty straightforward and easy, but when you are a student thrown into a real-world data management environment, you may end up struggling for a while until you learn to let go of what's weighing you down (your biases). Performance improvement was also something that I had to struggle with during the project. Creating queries is easy, but one of the main goals of the project was to efficiently leverage the power of my cluster and database. I spent a lot of time improving my data modeling to make the queries as cheap as possible. My efforts were rewarded with a fast, scalable and almost linear querying performance.
+The experience that I gained while doing GSoC was extremely valuable. I had the chance to discuss with experts and get valuable insights on how to efficiently approach a problem, how to model my data, and how to make compromises between efficiency and accuracy. In retrospect, this may sound straightforward and easy, but when you are a student thrown into a real-world data management environment, you may end up struggling for a while until you learn to let go of what's weighing you down (your biases). Performance improvement was also something that I had to struggle with during the project. Creating queries is easy, but one of the main goals of the project was to efficiently leverage the power of my cluster and database. I spent a lot of time improving my data modeling to make the queries as cheap as possible. My efforts were rewarded with a fast, scalable and almost linear querying performance.
 
 GSoC was tough, but the good kind of tough. It is something that I would warmly recommend to anyone who wants to engage in the open source community, build something beautiful, and who likes to struggle for their reward.   
 
@@ -156,7 +156,7 @@ This project was a first shot at developing an operating and efficient analytics
 
 ### Conclusions
 
-I managed to fulfill all of my main goals so I am happy with the results of my project. There is still room for expansion and further improvements, some of which I detailed in the previous section. However, barring future extensions, I think the current iteration of the project is very sound in terms of logic and the performance is probably the best that we can get with the current setup.
+I managed to fulfill all my main goals so I am happy with the results of my project. There is still room for expansion and further improvements, some of which I detailed in the previous section. However, barring future extensions, I think the current iteration of the project is very sound in terms of logic and the performance is probably the best that we can get with the current setup.
 
 ### Acknowledgements
 
