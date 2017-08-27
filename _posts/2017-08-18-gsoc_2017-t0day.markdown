@@ -5,8 +5,8 @@ layout: default
 modal-id: 4
 category: gsoc2017
 date: 2017-08-26
-img: temp.svg
-thumbnail: temp.svg
+img: t0day_logo.svg
+thumbnail: t0day_logo.svg
 alt: license-img
 repository: https://github.com/hi-T0day/gsoc_relationship/
 documentation: https://github.com/hi-T0day/gsoc_relationship/blob/master/README.md
@@ -20,6 +20,7 @@ I thought for this name for a long time, and it is suitable to me for many reaso
 1. We all know what 0day is. When people said "hi-t0day", it seems like "hit 0day". That's funny.
 2. Chinese pronunciation of today is similar to my real name.
 3. "T" is also a significant letter in my name. 
+{: .text-left .spaced-list}
 
 Now, I am a master student at the School of Cyber Security, ShangHai JiaoTong University. My research interest is the Advanced Persistent Threat.
 This blog summarizes the results of my project in the GSoC2017.  
@@ -33,6 +34,7 @@ Dona generates the primary relationship table and stores them in Cassandra. And 
 2. In TensorFlowOnSpark, use the Neural Network to predict the label of the malware.
 3. In Spark, generate the final score between the queried and the related malware.
 4. In D3.js, visualize the results.
+{: .text-left .spaced-list}
 
 This project was developed as a service for Holmes Processing System and uses data and infrastructure as provided by [Holmes Processing](https://github.com/HolmesProcessing).
 
@@ -46,12 +48,14 @@ The preprocessing is carried out according to these steps:
 1. divide the words, discard those words that appear in the common prefixe and suffixe file, and also drop the words that size is less than 4. 
 2. count the number of words in the first step, and filter out the words that appear greater than 50. In all, there are 1105 words.
 3. loop through every malware and if keywords in his signatures, we set 1 to the corresponding keyword position, otherwise 0. The output is a 1105 dimension boolean vector.
+{: .text-left .spaced-list}
 
 ##### KMeans clustering of Virustotal
 KMeans algorithm is used to train the virustotal results. Considering that:
 
 1. Even the number of samples is not very large, the type of sample is still rich.
 2. Virustotal results for many samples are too generic to give any useful information.
+{: .text-left .spaced-list}
 
 I divide the 3024 samples into ten categories. The number of each category is:  
 0 -> 459, 1 -> 135, 2 -> 710, 3 -> 148, 4 -> 544, 5 -> 621, 6 -> 212, 7 -> 147, 8 -> 311, 9 -> 295.
@@ -65,6 +69,7 @@ The preprocessing is carried out according to these steps:
 
 1. count the total number of each dll function, and filter out the number of dll functions that is greater than 50. In all, there are 502 dll functions.
 2. loop through every malware and if it has one dll function, we set 1 to the corresponding position, otherwise 0. The output is a 502 dimension boolean vector.  
+{: .text-left .spaced-list}
 
 Finally, I merged two vectors, and generate a 519 dimensions vector. 
 We get a dll_function list by counting the number of dll_function and keep the only number >= 10000. The size of the list is 502. To a certain malware, we assign true or false when it contains the dll_function or not.
@@ -75,7 +80,8 @@ I extract the top 10000 opcodes from the objdump services. If there is not enoug
 #### Neural Network
 The sample for the training set is the sample with VT results, the total number of them is 3010.  
 
-![Relationship_Types](./img/t0day/NN_framework.png)
+![Relationship_Types](./img/t0day/NN_framework.png){: .img-responsive}
+
 
 *Figure 1: the Framework of the Neural Network*
 
@@ -89,6 +95,7 @@ There are three models in the neural network.
 1. The "train" mode is used to train a model for the neural network. 
 2. The "inference" mode is used to show the accuracy of model by labelled data. 
 3. The "predict" mode is used to predict the data without label
+{: .text-left .spaced-list}
 
 ######TIP: For more information on the algorithm, please refer to this article written by my mentor Bojan.
 
@@ -97,7 +104,7 @@ The neural network is run on TensorFlowOnSpark. The code works well in my own cl
 #### Final Score Generate
 ##### Relationship Score Algorithm
 
-![Relationship_Score](./img/t0day/relationship_score.png)
+![Relationship_Score](./img/t0day/relationship_score.png){: .img-responsive}
 
 *Figure 2: The Schematic diagram of relationship score algorithm*
 
@@ -110,16 +117,17 @@ The JSON file is formatted like this
 
 ```
 To a leaf node (malware)
-name:					// sha256 name
-final_score:			// Final_score
-indicators:				// the reason that two samples are related
+name:			// sha256 name
+final_score:	// Final_score
+indicators:	// the reason that two samples are related
 
 To a branch node
-name:					// branch_name
-final_score:			// the max score of the children
-indicators:         	// the number of children
-children: []        	// the children of this node
+name:			// branch_name
+final_score:	// the max score of the children
+indicators:	// the number of children
+children: []	// the children of this node
 ```
+{: .text-left}
 
 #### Visualization
 Visualization part is a website displaying the final relationships using d3.js. There are multiple views and tricks to improve the user experience. The page shows the relationships in a tree map.  
@@ -134,6 +142,7 @@ When we set a threshold score, those nodes whose scores are greater than the thr
 When we click the artefact’s name, the nodes with this feature are added to ( or deleted from ) the map.
 3. Quick View:
 This view shows a histogram that displays the number of nodes in different segments of scores.
+{: .text-left .spaced-list}
 
 ##### Tricks
 
@@ -146,6 +155,7 @@ When we move the mouse to the leaf node, the tooltip shows the final score, the 
 When we move the mouse to the branch node, the tooltip shows the branch name, the number of children in this branch, and the maximum score in this branch.
 4. Visualization weight:
 In the whole map, the line weight is set according to the target node score. In each set, the nodes are sorted by the score.
+{: .text-left .spaced-list}
 
 ### Proud of things
 Before the project, although I know something about the big data ecosystem, the actual operation of code is hardly. So along with the way, I encountered a lot of problems. Through communication with mentors, reading books, most of the problems have been solved.  
@@ -154,6 +164,7 @@ These are things that make me impressed:
 1. There will always be some strange analysis results generated by Holmes-Totem and Holmes-Totem-Dynamic. For example, the preprocessing code worked well when I used dataframe to show the results. However, a few days later, it failed when I save all the results into the file. I tried to find the wrong sample, but failed. There is a little while, I was incompetent and weak, thinking to skip this problem and to delete the wrong samples. But I did not give up, finally finally and finally, through the `try ... except` function, I find the sample, and modify the code successfully. In fact, only six wrong samples in the millions of results.
 2. The TensorFlowOnSpark troubled me for a long time. In order to solve the problem: "The TensorFlowOnSpark cannot run well in the HDP YARN I was using", I pulled an issue to the author of TensorFlowOnSpark, followed George's suggestion to write the most basic “helloworld” program and use a script to run the program, talked with Bojan about the source code, did some other tests and even made the cluster on my own PC. Although the problem has not resolved, I enjoy the process of solving the problem.
 3. When optimizing the visualization web page, some functions seem difficult to achieve. Things get easier when I split the problems into pieces, and then resolved. Very proud of the current interface.
+{: .text-left .spaced-list}
 
 ### Future Work
 Now, the third part of my work: generate the final score has not been fully archieved because the final score is generated from the primary relationship table. I got this table two weeks ago and time is not enough for me to finish it.  
@@ -164,6 +175,7 @@ In the next term, I will continue doing the third part work. I will spend 2-3 ho
 1. understanding the architecture of generating primary relationship table.
 2. coding the final score generating algorithm.
 3. generating the final score JSON file when querying.
+{: .text-left .spaced-list}
 
 From a longer-term perspective, the system will be online, how to make the program efficient and stable is another part of my future work. 
 
