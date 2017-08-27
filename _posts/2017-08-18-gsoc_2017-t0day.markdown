@@ -80,7 +80,7 @@ I extract the top 10000 opcodes from the objdump services. If there is not enoug
 #### Neural Network
 The sample for the training set is the sample with VT results, the total number of them is 3010.  
 
-![Relationship_Types](./img/t0day/NN_framework.png){: .img-responsive}
+![Relationship_Types](img/t0day/NN_framework.png){: .img-responsive}
 
 
 *Figure 1: the Framework of the Neural Network*
@@ -104,7 +104,7 @@ The neural network is run on TensorFlowOnSpark. The code works well in my own cl
 #### Final Score Generate
 ##### Relationship Score Algorithm
 
-![Relationship_Score](./img/t0day/relationship_score.png){: .img-responsive}
+![Relationship_Score](img/t0day/relationship_score.png){: .img-responsive}
 
 *Figure 2: The Schematic diagram of relationship score algorithm*
 
