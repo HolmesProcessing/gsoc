@@ -58,10 +58,9 @@ meaningful connections or `relationships` with one another.
 For example: A malicious executable may issue a call to a specific domain associated with one or more IPs. In turn, these IPs might be related to some bot campaign. Assuming these connections can be detected in your Zoo in some form, you have already identified several primary relationships:
 
 1. Executable_1 <-> Domain_2
-
 2. Domain_2 <-> IP_3
-
 3. Executable_1 <-> IP_3
+{: .text-left .spaced-list}
 
 Each of the described connections above is a valid primary relationship. However, the disclaimer in the previous section remains: the primary relationships do not automatically map to final relationships. Primary relationships can also be circumstancial, and that is fine. Historical analytic records should never be deleted (unless they have a specific Time To Live threshold) and circumstancial connections can also be used to generate historical time series.
 
@@ -80,6 +79,7 @@ analytics_knowledge_base
   - feature_value blob,
   - timestamp timeuuid
 ```
+{: .text-left}
 
 The features of interest are manually defined, in this case by me through careful research. This set is by no means exhaustive and it can (and should) be extended by the analyst whenever relevant information for relationship detection is defined, either by academic research or practical explorations on your dataset. So far, my system uses the following features as indicators of relationships:
 
@@ -125,7 +125,7 @@ Unlike the hashes, the binary_signature was rarely present in the PEInfo results
 
 The following figure shows the storage schema for the data that I generate in my implementations. You can find the code for automatically generating these tables in your Cassandra installation in the `./storage/storage.py` script.
 
-![storage_schema](./img/dona/storage.png)
+![storage_schema](./img/dona/storage.png){: .img-responsive}
 
 |Table Name | Description |
 |-----------|-------------|
