@@ -30,6 +30,7 @@ A Totem Static Service is a web server which does the analysis for a short perio
 2. `HelloWorld.conf` contains Service configuration.
 3. `Helloworld.{lang}` to create a webserver and logic to analyze input file.
 4. `Dockerfile` for containerization.
+{: .text-left .spaced-list}
 
 All the Services have a lot of common code. I put together all the common code and created a template out of it. Using my Template engine, I created 2 services and about documentation about Totem Services.
 
@@ -59,6 +60,8 @@ typedef struct {
 	pe_imported_dll_t *dlls; // array of DLLs
 } pe_imports_t;
 ```
+{: .text-left}
+
 I find this challenge similar to schema design in DBMS. I really enjoyed doing this. Next, I extended libpe to support everything that PEV supports and used this library as the analyzer library for PEMeta.
 
 Contributions related to libpe: https://github.com/merces/libpe/pull/14
