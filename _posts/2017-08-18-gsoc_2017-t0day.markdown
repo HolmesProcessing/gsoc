@@ -167,7 +167,7 @@ These are things that make me impressed:
 {: .text-left .spaced-list}
 
 ### Future Work
-Now, the third part of my work: generate the final score has not been fully archieved because the final score is generated from the primary relationship table. I got this table two weeks ago and time is not enough for me to finish it.  
+Now, the third part of my work: generate the final score has not been fully achieved because the final score is generated from the primary relationship table. I got this table two weeks ago and time is not enough for me to finish it.  
 I have to say, the TensorFlowOnSpark cannot work in the HDP YARN I was using. Although many methods have been used in the cluster, it still cannot work.
 I will continue to follow up.  
 In the next term, I will continue doing the third part work. I will spend 2-3 hours a day
