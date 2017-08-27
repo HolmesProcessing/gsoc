@@ -128,7 +128,7 @@ Unlike the hashes, the binary_signature was rarely present in the PEInfo results
 
 The following figure shows the storage schema for the data that I generate in my implementations. You can find the code for automatically generating these tables in your Cassandra installation in the `./storage/storage.py` script.
 
-![storage_schema](./img/dona/storage.png){: .img-responsive}
+![storage_schema](img/dona/storage.png){: .img-responsive}
 
 |Table Name | Description |
 |-----------|-------------|
