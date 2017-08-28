@@ -9,11 +9,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   viewBox="-92 46 160.6 160"
-   width="200.75"
-   height="200"
+   viewBox="-92 46 170.97612 169.14426"
+   width="56.546791mm"
+   height="55.940941mm"
    id="svg2"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
    sodipodi:docname="t0day_logo.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -24,16 +24,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1279"
-     inkscape:window-height="685"
+     inkscape:window-width="1765"
+     inkscape:window-height="918"
      id="namedview556"
      showgrid="false"
-     units="px"
-     inkscape:zoom="0.944"
-     inkscape:cx="126.14407"
-     inkscape:cy="125"
-     inkscape:window-x="22"
-     inkscape:window-y="0"
+     units="mm"
+     inkscape:zoom="1.888"
+     inkscape:cx="-100.99488"
+     inkscape:cy="49.43532"
+     inkscape:window-x="36"
+     inkscape:window-y="1380"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
   <metadata
@@ -119,7 +119,7 @@
   <g
      id="g16"
      style="fill:none;fill-opacity:1;stroke:none;stroke-dasharray:none;stroke-opacity:1"
-     transform="matrix(0.79582903,0,0,0.79582903,-17.780047,9.974914)"
+     transform="matrix(0.86092942,0,0,0.8593372,-14.145215,5.8488827)"
      clip-path="url(#clipPath4690)">
     <title
        id="title18">Canvas 1</title>
@@ -135,12 +135,12 @@
       <title
          id="title24">Layer 1</title>
       <path
-         d="m -61.5,47 140.36263,0 c 16.56854,0 30,13.43146 30,30 l 0,138.21588 c 0,16.56854 -13.43146,30 -30,30 l -140.36263,0 c -16.56854,0 -30,-13.43146 -30,-30 L -91.5,77 c 0,-16.56854 13.43146,-30 30,-30 z"
+         d="M -61.5,47 H 78.86263 c 16.56854,0 30,13.43146 30,30 v 138.21588 c 0,16.56854 -13.43146,30 -30,30 H -61.5 c -16.56854,0 -30,-13.43146 -30,-30 V 77 c 0,-16.56854 13.43146,-30 30,-30 z"
          id="path26"
          inkscape:connector-curvature="0"
          style="fill:#0d809f" />
       <path
-         d="m -32.24057,170.77643 c -20.302794,0.014 -40.413275,2.08633 -59.24804,6.10547 l 0,38.33398 c 0,16.62002 13.37999,30 29.99999,30 l 140.36328,0 c 16.30785,0 29.48692,-12.88538 29.97656,-29.07031 C 81.41693,188.27465 27.05167,170.7931 -32.24057,170.77643 Z"
+         d="m -32.24057,170.77643 c -20.302794,0.014 -40.413275,2.08633 -59.24804,6.10547 v 38.33398 c 0,16.62002 13.37999,30 29.99999,30 H 78.87466 c 16.30785,0 29.48692,-12.88538 29.97656,-29.07031 C 81.41693,188.27465 27.05167,170.7931 -32.24057,170.77643 Z"
          id="path28"
          inkscape:connector-curvature="0"
          style="fill:url(#Obj_Gradient)" />
@@ -406,13 +406,12 @@
       <text
          transform="translate(10.01322,206.076)"
          id="text132"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.04296875"
            y="2"
-           textLength="25.914062"
            id="tspan134"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100b1c0209afa98e3c1</tspan>
       </text>
@@ -433,13 +432,12 @@
       <text
          transform="translate(10.269571,211.36827)"
          id="text140"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.2265625"
            y="2"
-           textLength="17.240234"
            id="tspan142"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1002195d39f</tspan>
         <tspan
@@ -447,7 +445,6 @@
            font-weight="500"
            x="17.431641"
            y="2"
-           textLength="8.341797"
            id="tspan144"
            style="font-weight:500;font-size:2px;font-family:Helvetica">fbb35b38</tspan>
       </text>
@@ -468,13 +465,12 @@
       <text
          transform="translate(10.405224,216.0772)"
          id="text150"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.20849609"
            y="2"
-           textLength="26.583008"
            id="tspan152"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100287e38857c6d8887</tspan>
       </text>
@@ -495,13 +491,12 @@
       <text
          transform="translate(-46.402794,211.34052)"
          id="text158"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.10644531"
            y="2"
-           textLength="16.78711"
            id="tspan160"
            style="font-weight:500;font-size:2px;font-family:Helvetica">domain,imphash,ip</tspan>
       </text>
@@ -522,13 +517,12 @@
       <text
          transform="translate(46.493845,194.38667)"
          id="text166"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.20849609"
            y="2"
-           textLength="26.583008"
            id="tspan168"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1002ca2a2e6edde9d6e</tspan>
       </text>
@@ -549,13 +543,12 @@
       <text
          transform="translate(46.383116,189.2485)"
          id="text174"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.2265625"
            y="2"
-           textLength="16.12793"
            id="tspan176"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1004b01b5f</tspan>
         <tspan
@@ -563,7 +556,6 @@
            font-weight="500"
            x="16.319336"
            y="2"
-           textLength="9.454102"
            id="tspan178"
            style="font-weight:500;font-size:2px;font-family:Helvetica">fda48a0ab</tspan>
       </text>
@@ -584,13 +576,12 @@
       <text
          transform="translate(-3.531534,191.32487)"
          id="text184"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.1640625"
            y="2"
-           textLength="9.671875"
            id="tspan186"
            style="font-weight:500;font-size:2px;font-family:Helvetica">imphash,ip</tspan>
       </text>
@@ -611,13 +602,12 @@
       <text
          transform="translate(10.228596,182.43045)"
          id="text192"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.20898438"
            y="2"
-           textLength="25.58203"
            id="tspan194"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100f02a4391e85d3f2b</tspan>
       </text>
@@ -638,13 +628,12 @@
       <text
          transform="translate(10.138903,187.2068)"
          id="text200"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.43066406"
            y="2"
-           textLength="26.138672"
            id="tspan202"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1003f0ba0a3bb9a8087</tspan>
       </text>
@@ -665,13 +654,12 @@
       <text
          transform="translate(10.385286,196.81976)"
          id="text208"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.15234375"
            y="2"
-           textLength="26.695312"
            id="tspan210"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100837a5ad13bba4122</tspan>
       </text>
@@ -692,13 +680,12 @@
       <text
          transform="translate(-46.659145,189.59619)"
          id="text216"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.10644531"
            y="2"
-           textLength="16.78711"
            id="tspan218"
            style="font-weight:500;font-size:2px;font-family:Helvetica">domain,imphash,ip</tspan>
       </text>
@@ -719,13 +706,12 @@
       <text
          transform="translate(46.237494,98.11635)"
          id="text224"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.48681641"
            y="2"
-           textLength="26.026367"
            id="tspan226"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100f3c2bd8b0a3db7ba</tspan>
       </text>
@@ -746,13 +732,12 @@
       <text
          transform="translate(-3.017335,97.80211)"
          id="text232"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.16308594"
            y="2"
-           textLength="8.673828"
            id="tspan234"
            style="font-weight:500;font-size:2px;font-family:Helvetica">pehash,ip</tspan>
       </text>
@@ -773,13 +758,12 @@
       <text
          transform="translate(82.87942,83.67216)"
          id="text240"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.43066406"
            y="2"
-           textLength="26.138672"
            id="tspan242"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100329fb907154227d7</tspan>
       </text>
@@ -800,13 +784,12 @@
       <text
          transform="translate(40.15578,83.67216)"
          id="text248"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.2216797"
            y="2"
-           textLength="1.5566406"
            id="tspan250"
            style="font-weight:500;font-size:2px;font-family:Helvetica">ip</tspan>
       </text>
@@ -827,13 +810,12 @@
       <text
          transform="translate(46.483876,88.48689)"
          id="text256"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.43066406"
            y="2"
-           textLength="26.138672"
            id="tspan258"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1007623f349a4402e73</tspan>
       </text>
@@ -854,13 +836,12 @@
       <text
          transform="translate(46.483876,78.6759)"
          id="text264"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.04296875"
            y="2"
-           textLength="25.914062"
            id="tspan266"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100f9c7caa7689d9e5a</tspan>
       </text>
@@ -881,13 +862,12 @@
       <text
          transform="translate(46.17238,74.13869)"
          id="text272"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.48681641"
            y="2"
-           textLength="26.026367"
            id="tspan274"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1006cb4447e9a2efe47</tspan>
       </text>
@@ -908,13 +888,12 @@
       <text
          transform="translate(-2.726091,80.98524)"
          id="text280"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.1640625"
            y="2"
-           textLength="8.671875"
            id="tspan282"
            style="font-weight:500;font-size:2px;font-family:Helvetica">domain,ip</tspan>
       </text>
@@ -935,13 +914,12 @@
       <text
          transform="translate(10.128934,92.49916)"
          id="text288"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.20898438"
            y="2"
-           textLength="25.58203"
            id="tspan290"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100597bf5aa48a37fda</tspan>
       </text>
@@ -962,13 +940,12 @@
       <text
          transform="translate(9.993281,86.88198)"
          id="text296"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.04296875"
            y="2"
-           textLength="25.914062"
            id="tspan298"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100fddc455b6ca699e4</tspan>
       </text>
@@ -989,13 +966,12 @@
       <text
          transform="translate(-45.30262,89.80886)"
          id="text304"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.10546875"
            y="2"
-           textLength="15.789062"
            id="tspan306"
            style="font-weight:500;font-size:2px;font-family:Helvetica">domain,pehash,ip</tspan>
       </text>
@@ -1016,13 +992,12 @@
       <text
          transform="translate(45.944113,122.27583)"
          id="text312"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.15576172"
            y="2"
-           textLength="24.688477"
            id="tspan314"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100b7c0fe20d6f4cf2c</tspan>
       </text>
@@ -1043,13 +1018,12 @@
       <text
          transform="translate(45.944113,112.65098)"
          id="text320"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.099121086"
            y="2"
-           textLength="25.801758"
            id="tspan322"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100cbe0305187abcc2f</tspan>
       </text>
@@ -1070,13 +1044,12 @@
       <text
          transform="translate(46.35392,117.54887)"
          id="text328"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.15234375"
            y="2"
-           textLength="26.695312"
            id="tspan330"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1003060e42d64728677</tspan>
       </text>
@@ -1097,13 +1070,12 @@
       <text
          transform="translate(46.216843,107.926)"
          id="text336"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.22607422"
            y="2"
-           textLength="16.68457"
            id="tspan338"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1008913d21</tspan>
         <tspan
@@ -1111,7 +1083,6 @@
            font-weight="500"
            x="16.763184"
            y="2"
-           textLength="10.010742"
            id="tspan340"
            style="font-weight:500;font-size:2px;font-family:Helvetica">1391e6978</tspan>
       </text>
@@ -1132,13 +1103,12 @@
       <text
          transform="translate(-8.379968,114.68834)"
          id="text346"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.16162109"
            y="2"
-           textLength="14.676758"
            id="tspan348"
            style="font-weight:500;font-size:2px;font-family:Helvetica">pehash,imphash</tspan>
       </text>
@@ -1159,13 +1129,12 @@
       <text
          transform="translate(82.69604,141.52752)"
          id="text354"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.26464844"
            y="2"
-           textLength="26.470703"
            id="tspan356"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100b3437ac53e6aac87</tspan>
       </text>
@@ -1186,13 +1155,12 @@
       <text
          transform="translate(83.11119,146.43978)"
          id="text362"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.20849609"
            y="2"
-           textLength="26.583008"
            id="tspan364"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb10095c104464a360010</tspan>
       </text>
@@ -1213,13 +1181,12 @@
       <text
          transform="translate(82.97589,136.43592)"
          id="text370"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.043457031"
            y="2"
-           textLength="24.913086"
            id="tspan372"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100faceeefe1defd438</tspan>
       </text>
@@ -1240,13 +1207,12 @@
       <text
          transform="translate(35.108035,141.55282)"
          id="text378"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.22021484"
            y="2"
-           textLength="7.55957"
            id="tspan380"
            style="font-weight:500;font-size:2px;font-family:Helvetica">imphash</tspan>
       </text>
@@ -1267,13 +1233,12 @@
       <text
          transform="translate(46.483876,136.81344)"
          id="text386"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.48681641"
            y="2"
-           textLength="26.026367"
            id="tspan388"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100c9546570455484df</tspan>
       </text>
@@ -1294,13 +1259,12 @@
       <text
          transform="translate(46.61953,131.52614)"
          id="text394"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.099609382"
            y="2"
-           textLength="24.80078"
            id="tspan396"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1000cfcdddf4bd6bfbb</tspan>
       </text>
@@ -1321,13 +1285,12 @@
       <text
          transform="translate(-8.102966,136.36156)"
          id="text402"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.16259766"
            y="2"
-           textLength="14.674805"
            id="tspan404"
            style="font-weight:500;font-size:2px;font-family:Helvetica">domain,imphash</tspan>
       </text>
@@ -1348,13 +1311,12 @@
       <text
          transform="translate(82.83953,175.32078)"
          id="text410"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.04296875"
            y="2"
-           textLength="25.914062"
            id="tspan412"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100ca4c09733b697fad</tspan>
       </text>
@@ -1375,13 +1337,12 @@
       <text
          transform="translate(35.869715,174.87939)"
          id="text418"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.21923828"
            y="2"
-           textLength="6.5615234"
            id="tspan420"
            style="font-weight:500;font-size:2px;font-family:Helvetica">pehash</tspan>
       </text>
@@ -1402,13 +1363,12 @@
       <text
          transform="translate(82.6996,156.06017)"
          id="text426"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.061035156"
            y="2"
-           textLength="7.229492"
            id="tspan428"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1416,7 +1376,6 @@
            font-weight="500"
            x="7.2553711"
            y="2"
-           textLength="17.683594"
            id="tspan430"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f8df24593c3d04e0e</tspan>
       </text>
@@ -1437,13 +1396,12 @@
       <text
          transform="translate(82.97447,165.69295)"
          id="text436"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.061035156"
            y="2"
-           textLength="7.229492"
            id="tspan438"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1451,7 +1409,6 @@
            font-weight="500"
            x="7.2553711"
            y="2"
-           textLength="17.683594"
            id="tspan440"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f0d4665b3f1ca2ab6</tspan>
       </text>
@@ -1472,13 +1429,12 @@
       <text
          transform="translate(82.84238,160.7792)"
          id="text446"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.28271484"
            y="2"
-           textLength="7.229492"
            id="tspan448"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1486,7 +1442,6 @@
            font-weight="500"
            x="7.4770508"
            y="2"
-           textLength="18.240234"
            id="tspan450"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f0ba8bc78a1455bae</tspan>
       </text>
@@ -1507,13 +1462,12 @@
       <text
          transform="translate(35.59912,160.81173)"
          id="text456"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.22021484"
            y="2"
-           textLength="6.55957"
            id="tspan458"
            style="font-weight:500;font-size:2px;font-family:Helvetica">domain</tspan>
       </text>
@@ -1534,13 +1488,12 @@
       <text
          transform="translate(46.62309,179.78972)"
          id="text464"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.061035156"
            y="2"
-           textLength="7.229492"
            id="tspan466"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1548,7 +1501,6 @@
            font-weight="500"
            x="7.2553711"
            y="2"
-           textLength="17.683594"
            id="tspan468"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f6f3979058e26c962</tspan>
       </text>
@@ -1569,13 +1521,12 @@
       <text
          transform="translate(-7.341286,170.06466)"
          id="text474"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.16162109"
            y="2"
-           textLength="13.676758"
            id="tspan476"
            style="font-weight:500;font-size:2px;font-family:Helvetica">domain,pehash</tspan>
       </text>
@@ -1596,13 +1547,12 @@
       <text
          transform="translate(9.585611,110.19807)"
          id="text482"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.28320312"
            y="2"
-           textLength="7.229492"
            id="tspan484"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1610,7 +1560,6 @@
            font-weight="500"
            x="7.4775391"
            y="2"
-           textLength="17.239258"
            id="tspan486"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f6f2793e3154571fd</tspan>
       </text>
@@ -1631,13 +1580,12 @@
       <text
          transform="translate(9.316442,158.89258)"
          id="text492"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.061035156"
            y="2"
-           textLength="7.229492"
            id="tspan494"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1645,7 +1593,6 @@
            font-weight="500"
            x="7.2553711"
            y="2"
-           textLength="17.683594"
            id="tspan496"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f6b866d1f0aa5ce12</tspan>
       </text>
@@ -1666,13 +1613,12 @@
       <text
          transform="translate(10.133207,147.86854)"
          id="text502"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.2265625"
            y="2"
-           textLength="7.229492"
            id="tspan504"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1680,7 +1626,6 @@
            font-weight="500"
            x="7.420898"
            y="2"
-           textLength="18.35254"
            id="tspan506"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f2658debb81590605</tspan>
       </text>
@@ -1701,13 +1646,12 @@
       <text
          transform="translate(-51.865805,140.24522)"
          id="text512"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.10400391"
            y="2"
-           textLength="21.791992"
            id="tspan514"
            style="font-weight:500;font-size:2px;font-family:Helvetica">domain,pehash,imphash</tspan>
       </text>
@@ -1728,13 +1672,12 @@
       <text
          transform="translate(-27.852417,152.47866)"
          id="text520"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.2265625"
            y="2"
-           textLength="7.229492"
            id="tspan522"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1742,7 +1685,6 @@
            font-weight="500"
            x="7.420898"
            y="2"
-           textLength="18.35254"
            id="tspan524"
            style="font-weight:500;font-size:2px;font-family:Helvetica">fa2225885663ee3bb</tspan>
       </text>
@@ -1763,13 +1705,12 @@
       <text
          transform="translate(-26.632966,177.77467)"
          id="text530"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.28271484"
            y="2"
-           textLength="7.229492"
            id="tspan532"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1777,7 +1718,6 @@
            font-weight="500"
            x="7.4770508"
            y="2"
-           textLength="18.240234"
            id="tspan534"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f7b26e1373bb1c1bd</tspan>
       </text>
@@ -1798,13 +1738,12 @@
       <text
          transform="translate(-26.902848,164.9379)"
          id="text540"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.33935547"
            y="2"
-           textLength="7.229492"
            id="tspan542"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1812,7 +1751,6 @@
            font-weight="500"
            x="7.5336909"
            y="2"
-           textLength="17.126953"
            id="tspan544"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f6a82f692f21c903a</tspan>
       </text>
@@ -1833,13 +1771,12 @@
       <text
          transform="translate(-91.60957,149.67462)"
          id="text550"
-         style="fill:#000000">
+         style="line-height:0%;fill:#000000">
         <tspan
            font-size="2"
            font-weight="500"
            x="0.33935547"
            y="2"
-           textLength="7.229492"
            id="tspan552"
            style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
         <tspan
@@ -1847,7 +1784,6 @@
            font-weight="500"
            x="7.5336909"
            y="2"
-           textLength="17.126953"
            id="tspan554"
            style="font-weight:500;font-size:2px;font-family:Helvetica">f208a37dc9db2f4f9</tspan>
       </text>
