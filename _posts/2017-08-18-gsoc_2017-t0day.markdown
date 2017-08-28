@@ -26,7 +26,7 @@ Now, I am a master student at the School of Cyber Security, ShangHai JiaoTong Un
 This blog summarizes the results of my project in the GSoC2017.  
 
 ### Project Overview
-The "Holmes Automated Malware Relationships" project is divided into two parts. Dona([her blog](https://www.holmesprocessing.com/gsoc/#portfolioModal3)) and I cooperate to complete the project this summer. 
+The "Holmes Automated Malware Relationships" project is divided into two parts. Dona([her blog](https://www.holmesprocessing.com/gsoc/#portfolioModal6)) and I cooperate to complete the project this summer. 
 The main purpose of this project is to give the final score between the queried and the related malware by the malware analytic results, and display the results in a visualization way to help the analysts do deep-dive investigations.
 Dona generates the primary relationship table and stores them in Cassandra. And my work is to:
 
@@ -97,7 +97,7 @@ There are three models in the neural network.
 3. The "predict" mode is used to predict the data without label
 {: .text-left .spaced-list}
 
-######TIP: For more information on the algorithm, please refer to this article written by my mentor Bojan.
+###### TIP: For more information on the algorithm, please refer to this article written by my mentor Bojan. [Article](https://www.sec.in.tum.de/bojan-kolosnjaji-2/publication/452)
 
 The neural network is run on TensorFlowOnSpark. The code works well in my own cluster with Standalone model on Spark, while it cannot run well in the HDP YARN I was using because of the wrong configuration which I could not solve.
 
@@ -117,12 +117,12 @@ The JSON file is formatted like this
 
 ```
 To a leaf node (malware)
-name:			// sha256 name
+name:		// sha256 name
 final_score:	// Final_score
 indicators:	// the reason that two samples are related
 
 To a branch node
-name:			// branch_name
+name:		// branch_name
 final_score:	// the max score of the children
 indicators:	// the number of children
 children: []	// the children of this node
