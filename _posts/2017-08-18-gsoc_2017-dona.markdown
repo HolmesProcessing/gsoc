@@ -71,6 +71,8 @@ For example: A malicious executable may issue a call to a specific domain associ
 
 Each of the described connections above is a valid primary relationship. However, the disclaimer in the previous section remains: the primary relationships do not automatically map to final relationships. Primary relationships can also be circumstantial, and that is fine. Historical analytic records should never be deleted (unless they have a specific Time To Live (TTL) threshold) and circumstantial connections can also be used to generate historical time series.
 
+**Notice**: our database currently contains only analytic results for executables. Since I did not have any other artifact types available (IPs, domains, files), you will not see them mentioned or analyzed as objects any further. However, I have made my schematics and implementation content-independent, so that new services and artifact types can be easily integrated.
+
 ##### Implementation: Knowledge Base Generation
 
 The service results contain a lot of data and not all that data is necessary for meaningful analytics. In addition to that, I aim to organize the data in easily queryable and parsed pieces of information to avoid unnecessary parsing and filtering during a client request. As a result, I first create a Knowledge Base table which contains every feature of interest for each object and result in the database. This table does not ignore or filter duplicate results. The main purpose of this table is to be an authoritative and easily expandable repository for all the information relevant for analytics. The second purpose of this repository is to improve query time by forgoing the need for expensive parsing and searching for every relationship request. This table can be generated in bulk during service downtime, and as a result not burden a client wishing to calculate relationships with extra waiting time. The Knowledge Base entries have the following format:
@@ -89,7 +91,7 @@ The features of interest are manually defined, in this case by me through carefu
 | Feature Type  | Service | Feature Description |
 |------------ | ----------| --------------------|
 | imphash  | PEInfo | a hash of the import table for PE files |
-| pehash | PEInfo | a hash for the entire structure of PE file |
+| pehash | PEInfo | a hash for the entire structure of PE files |
 | binary_signature | PEInfo | digital signature for a PE file |
 | domain_requests | CUCKOO | url requests from a binary in a CUCKOO sandbox |
 | yara_rules | Yara | a set of matching yara rules |
