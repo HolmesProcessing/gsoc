@@ -40,7 +40,14 @@ This project was developed as a service for Holmes Processing System and uses da
 
 ### Documentation
 
-#### preprocess the malware analytic results
+#### Preprocess the malware analytic results
+The Holmes Processing provided the data analysed by Holmes-Totem and Dynamic-Holmes-Totem. My work is to preprocess the data to get the normalized data that can be used for machine learning.  
+My mentor Bojan has published several papers about malware detection and analysis by machine learning. My work is based on one of his papers: 
+
+[Kolosnjaji, Bojan, Ghadir Eraisha, George Webster, Apostolis Zarras, and Claudia Eckert. Empowering Convolutional Networks for Malware Classification and Analysis. In 30th International Joint Conference on Neural Networks (IJCNN), May 2017.](https://www.sec.in.tum.de/bojan-kolosnjaji-2/publication/452)
+
+My work is to implement the preprocessing code based on Holmes Processing database in spark, and the neural network code in TensorFlowOnSpark. 
+
 ##### Virustotal Results
 Virustotal gives the malware detection signatures of different vendors. Although different vendors have different naming conventions to the malware families, the keywords in signatures are almost the same.  
 The preprocessing is carried out according to these steps:
@@ -78,10 +85,10 @@ We get a dll_function list by counting the number of dll_function and keep the o
 I extract the top 10000 opcodes from the objdump services. If there is not enough opcode, then the remaining position is 0. The file "x86Opcodes" is used to convert the opcode into the number, the file gives 119 kinds of common opcodes, the opcodes that do not appear are also set to a type, then a total of 120 types of number.
 
 #### Neural Network
-The sample for the training set is the sample with VT results, the total number of them is 3010.  
+
+##### Algorithm 
 
 ![Relationship_Types](img/t0day/NN_framework.png){: .img-responsive}
-
 
 *Figure 1: the Framework of the Neural Network*
 
@@ -97,19 +104,44 @@ There are three models in the neural network.
 3. The "predict" mode is used to predict the data without label
 {: .text-left .spaced-list}
 
-###### TIP: For more information on the algorithm, please refer to this article written by my mentor Bojan. [Article](https://www.sec.in.tum.de/bojan-kolosnjaji-2/publication/452)
-
 The neural network is run on TensorFlowOnSpark. The code works well in my own cluster with Standalone model on Spark, while it cannot run well in the HDP YARN I was using because of the wrong configuration which I could not solve.
 
+##### Effect
+I use the neural network to predict the label of malware instead of clustering all malware with these reasons:
+
+1. Virustotal can only be done for a minority of samples, so we dont have enough samples. The total number of sample with VT results in this project is only 3010.
+2. Virustotal results for many samples are too generic to give any useful information.
+3. Even a small percent is still a lot of malware, the neural network model can label other malware with high confidence level.
+{: .text-left .spaced-list}
+
+With the labelled samples, I can tune the weight of the indicators in the primary relationship table to get the final relationship score.
+
 #### Final Score Generate
+
+##### Indicators of Relationship (Dona's work) 
+###### TIP: It is the work by Dona, another GSoC participant in this project. I reference her work here to let my blog be complete. 
+
+Dona manually defined the features of interest by her careful research. She used the following features as indicators of relationships and saved the results in the primary relationship table.
+
+| Feature Type  | Service | Feature Description |
+|------------ | ----------| --------------------|
+| imphash  | PEInfo | a hash of the import table for PE files |
+| pehash | PEInfo | a hash for the entire structure of PE files |
+| binary_signature | PEInfo | digital signature for a PE file |
+| domain_requests | CUCKOO | url requests from a binary in a CUCKOO sandbox |
+| yara_rules | Yara | a set of matching yara rules |
+{: class="table"}
+
 ##### Relationship Score Algorithm
 
 ![Relationship_Score](img/t0day/relationship_score.png){: .img-responsive}
 
 *Figure 2: The Schematic diagram of relationship score algorithm*
 
-The relationship score algorithm gives the similarity score between the object queried and the related object. The figure 2 shows the design of this algorithm. The input: rel_type scores are extracted from the primary relationship table. An algorithm tuning the weights of each score will be shown in the next paragraph. The final relationship score is the sum of (weight × rel_type score).  
-This algorithm is also used to tune the weights of each score. The neural network gives the label of the objects. The loss function is the sum of these final scores when the queried objects are in the different classifications and their final score above a threshold. Finally, minimizing the loss measured by gradient descent to get proper weights.
+The relationship score algorithm gives the similarity score between the sample queried and the related sample. The figure 2 shows the design of this algorithm. The input: rel_type scores are extracted from the primary relationship table. An algorithm tuning the weights of each score will be shown in the next paragraph. The final relationship score is the sum of (weight × rel_type score).  
+This algorithm is also used to tune the weights of each score. The neural network gives the label of the samples. The loss function is the sum of these final scores when the queried samples are in the different classifications and their final score above a threshold. Finally, minimizing the loss measured by gradient descent to get proper weights.  
+
+This algorithm is designed by me but has not yet been implemented because I got the primary relationship table two weeks ago and time is limited. I will finish it next term.
 
 ##### Random Final Score Generate
 The final score cannot be generated from the primary table temporarily. As an alternative, I generate the JSON files by a script randomly. The script can only be run in [JSON GENERATOR](http://beta.json-generator.com) which is an online parser that can generate data in a variety of formats.  
@@ -131,7 +163,9 @@ children: []	// the children of this node
 
 #### Visualization
 Visualization part is a website displaying the final relationships using d3.js. There are multiple views and tricks to improve the user experience. The page shows the relationships in a tree map.  
-[See here](http://120.77.40.25/d3/index.html)
+[See here](http://120.77.40.25/newd3/index.html)
+
+My work is based on Rob Schmuecker's work: [D3.js Drag and Drop, Zoomable, Panning, Collapsible Tree with auto-sizing.](http://bl.ocks.org/robschmuecker/7880033) I use these functions in my web page: tree map, collapsible and zoomable.
 
 ##### Multiple Views
 These three views can be used together.
@@ -161,7 +195,7 @@ In the whole map, the line weight is set according to the target node score. In 
 Before the project, although I know something about the big data ecosystem, the actual operation of code is hardly. So along with the way, I encountered a lot of problems. Through communication with mentors, reading books, most of the problems have been solved.  
 These are things that make me impressed:
 
-1. There will always be some strange analysis results generated by Holmes-Totem and Holmes-Totem-Dynamic. For example, the preprocessing code worked well when I used dataframe to show the results. However, a few days later, it failed when I save all the results into the file. I tried to find the wrong sample, but failed. There is a little while, I was incompetent and weak, thinking to skip this problem and to delete the wrong samples. But I did not give up, finally finally and finally, through the `try ... except` function, I find the sample, and modify the code successfully. In fact, only six wrong samples in the millions of results.
+1. There will always be some strange analysis results generated by Holmes-Totem and Holmes-Totem-Dynamic. For example, the preprocessing code worked well when I used dataframe to show the results. However, a few days later, it failed when I save all the results into the file. I lacked the experience of large-scale data analysis and wanted to skip the wrong samples. But I did not give up, finally finally and finally, through the `try ... except` function, I find the sample, and modify the code successfully. In fact, only six wrong samples in the millions of results.
 2. The TensorFlowOnSpark troubled me for a long time. In order to solve the problem: "The TensorFlowOnSpark cannot run well in the HDP YARN I was using", I pulled an issue to the author of TensorFlowOnSpark, followed George's suggestion to write the most basic “helloworld” program and use a script to run the program, talked with Bojan about the source code, did some other tests and even made the cluster on my own PC. Although the problem has not resolved, I enjoy the process of solving the problem.
 3. When optimizing the visualization web page, some functions seem difficult to achieve. Things get easier when I split the problems into pieces, and then resolved. Very proud of the current interface.
 {: .text-left .spaced-list}
