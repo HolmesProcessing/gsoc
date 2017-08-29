@@ -16,7 +16,7 @@ license:
 
 
 ### Preamble
-Back in the days when Holmes-Processing was born, it only consisted of one tool, [Totem](https://github.com/HolmesProcessing/Holmes-Totem). Totem excels at feature extraction and is still one of the most flexible and streamlined tools for this job on the market. After playing with Totem for a while it was obvious that we needed to get away from the single threaded python script that acted as a webserver for Totem for pull files from and also away from simply dumping results into mongoDB.
+Back in the days when Holmes-Processing was born, it only consisted of one tool, [Totem](https://github.com/HolmesProcessing/Holmes-Totem). Totem excels at feature extraction and is still one of the most flexible and streamlined tools for this job on the market. After playing with Totem for a while it was obvious that we needed to get away from the single threaded python script that acted as a webserver for Totem to pull files from and also away from simply dumping results into mongoDB.
 
 To tackle both issues, we needed a general-purpose storage tool that would abstract all of that away by providing a simple API to retrieve and save files as well as support data from multiple backends. This led to the development of [Holmes-Storage](https://github.com/HolmesProcessing/Holmes-Storage) to make it easier for admins and researchers alike to work with Totem and its results since you could just switch from mongoDB to Cassandra and from files on a local disk to S3 or Minio without touching Totem or anything attached to the rest of the infrastructure.
 
@@ -65,6 +65,10 @@ Generally speaking what we have here is a fully automatable processing pipeline 
 ### Future Work
 To improve this model even more we plan to add streaming capabilities to Holmes-Storage, add more support for different engines and work on the web frontend. The biggest chunk of work however will be to add more services which are ready to be used by everyone that is using the Holmes infrastructure.
 Besides this, documentation should be improved by providing a simple "quick start guide" on how to set everything up.
+
+
+##### Work done for Google Summer of Code
+[All commits from this list](https://github.com/HolmesProcessing/Holmes-Analytics/commits/master?author=cynexit) between May 30 and August 29, 2017 are officially part of GSoC 2017.
 
 
 ##### About the author
