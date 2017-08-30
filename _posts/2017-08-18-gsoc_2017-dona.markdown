@@ -8,7 +8,7 @@ date: 2017-08-25
 img: mal1.svg
 thumbnail: mal1.svg
 alt: license-img
-repository: https://github.com/cli0/gsoc_relationship
+repository: https://github.com/HolmesProcessing/gsoc_relationship
 documentation: https://github.com/cli0/gsoc_relationship/blob/master/README.md
 license: https://github.com/cli0/gsoc_relationship/blob/master/LICENSE
 
