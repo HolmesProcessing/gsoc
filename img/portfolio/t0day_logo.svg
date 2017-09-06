@@ -1,0 +1,1792 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="-92 46 170.97612 169.14426"
+   width="56.546791mm"
+   height="55.940941mm"
+   id="svg2"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="t0day_logo.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1765"
+     inkscape:window-height="918"
+     id="namedview556"
+     showgrid="false"
+     units="mm"
+     inkscape:zoom="1.888"
+     inkscape:cx="-100.99488"
+     inkscape:cy="49.43532"
+     inkscape:window-x="36"
+     inkscape:window-y="1380"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <metadata
+     id="metadata4"> Produced by OmniGraffle 7.4.2 
+    <dc:date>2017-08-27 14:42:04 +0000</dc:date>
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title></dc:title>
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <defs
+     id="defs6">
+    <linearGradient
+       x1="0"
+       x2="1"
+       id="Gradient"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="white"
+         id="stop9" />
+      <stop
+         offset="1"
+         stop-color="white"
+         stop-opacity="0"
+         id="stop11" />
+    </linearGradient>
+    <linearGradient
+       id="Obj_Gradient"
+       xlink:href="#Gradient"
+       gradientTransform="matrix(200.33983,0,0,200.33983,-91.48861,207.99615)" />
+    <font-face
+       font-family="Helvetica"
+       font-size="2"
+       units-per-em="1000"
+       underline-position="-75.68359"
+       underline-thickness="49.316406"
+       slope="0"
+       x-height="522.9492"
+       cap-height="717.28516"
+       ascent="770.0195"
+       descent="-229.98047"
+       font-weight="500"
+       id="font-face14"
+       stemv="0"
+       stemh="0"
+       accent-height="0"
+       ideographic="0"
+       alphabetic="0"
+       mathematical="0"
+       hanging="0"
+       v-ideographic="0"
+       v-alphabetic="0"
+       v-mathematical="0"
+       v-hanging="0"
+       strikethrough-position="0"
+       strikethrough-thickness="0"
+       overline-position="0"
+       overline-thickness="0">
+      <font-face-src>
+        <font-face-name
+           name="Helvetica" />
+      </font-face-src>
+    </font-face>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4690">
+      <rect
+         style="opacity:0.47099998;fill:#ffffff;fill-opacity:0.47096773;stroke:#000000;stroke-width:0.80000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4692"
+         width="198.51997"
+         height="196.82507"
+         x="-90.412537"
+         y="46.740013"
+         ry="27.966103" />
+    </clipPath>
+  </defs>
+  <g
+     id="g16"
+     style="fill:none;fill-opacity:1;stroke:none;stroke-dasharray:none;stroke-opacity:1"
+     transform="matrix(0.86092942,0,0,0.8593372,-14.145215,5.8488827)"
+     clip-path="url(#clipPath4690)">
+    <title
+       id="title18">Canvas 1</title>
+    <rect
+       width="201.72076"
+       height="198.21588"
+       id="rect20"
+       x="0"
+       y="0"
+       style="fill:#ffffff" />
+    <g
+       id="g22">
+      <title
+         id="title24">Layer 1</title>
+      <path
+         d="M -61.5,47 H 78.86263 c 16.56854,0 30,13.43146 30,30 v 138.21588 c 0,16.56854 -13.43146,30 -30,30 H -61.5 c -16.56854,0 -30,-13.43146 -30,-30 V 77 c 0,-16.56854 13.43146,-30 30,-30 z"
+         id="path26"
+         inkscape:connector-curvature="0"
+         style="fill:#0d809f" />
+      <path
+         d="m -32.24057,170.77643 c -20.302794,0.014 -40.413275,2.08633 -59.24804,6.10547 v 38.33398 c 0,16.62002 13.37999,30 29.99999,30 H 78.87466 c 16.30785,0 29.48692,-12.88538 29.97656,-29.07031 C 81.41693,188.27465 27.05167,170.7931 -32.24057,170.77643 Z"
+         id="path28"
+         inkscape:connector-curvature="0"
+         style="fill:url(#Obj_Gradient)" />
+      <path
+         d="m -28.65188,212.26247 c 18.205788,0 18.205788,-4.81473 36.411577,-4.81473"
+         id="path30"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.01239991;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,212.26247 c 18.205788,0 18.205788,0 36.411577,0"
+         id="path32"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:2.13494992;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,212.26247 c 18.205788,0 18.205788,4.81473 36.411577,4.81473"
+         id="path34"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.85915005;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,193.00355 c 18.205788,0 18.205788,-2.40736 36.411577,-2.40736"
+         id="path36"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.84686995;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,193.00355 c 18.205788,0 18.205788,2.40737 36.411577,2.40737"
+         id="path38"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.25089002;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,190.59619 c 18.205788,0 18.205788,-7.22209 36.411577,-7.22209"
+         id="path40"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.0520699;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,190.59619 c 18.205788,0 18.205788,-2.40737 36.411577,-2.40737"
+         id="path42"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:2.70637989;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,190.59619 c 18.205788,0 18.205788,2.40736 36.411577,2.40736"
+         id="path44"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.84686995;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,190.59619 c 18.205788,0 18.205788,7.22209 36.411577,7.22209"
+         id="path46"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.75714004;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,99.11635 c 18.205788,0 18.205788,0 36.411577,0"
+         id="path48"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.36895001;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 44.171274,84.67216 c 18.205786,0 18.205786,0 36.411576,0"
+         id="path50"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.25844002;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,82.2648 c 18.205788,0 18.205788,-7.2221 36.411577,-7.2221"
+         id="path52"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,82.2648 c 18.205788,0 18.205788,-2.40737 36.411577,-2.40737"
+         id="path54"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:2.27851009;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,82.2648 c 18.205788,0 18.205788,2.40736 36.411577,2.40736"
+         id="path56"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.25844002;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,82.2648 c 18.205788,0 18.205788,7.22209 36.411577,7.22209"
+         id="path58"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:0.59445101;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,90.69057 c 18.205788,0 18.205788,-8.42577 36.411577,-8.42577"
+         id="path60"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,90.69057 c 18.205788,0 18.205788,-2.80859 36.411577,-2.80859"
+         id="path62"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:4.3611598;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,90.69057 c 18.205788,0 18.205788,2.80859 36.411577,2.80859"
+         id="path64"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.38263988;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,90.69057 c 18.205788,0 18.205788,8.42578 36.411577,8.42578"
+         id="path66"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.36895001;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,115.9679 c 18.205788,0 18.205788,-7.2221 36.411577,-7.2221"
+         id="path68"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.60366011;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,115.9679 c 18.205788,0 18.205788,-2.40737 36.411577,-2.40737"
+         id="path70"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:2.63365006;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,115.9679 c 18.205788,0 18.205788,2.40736 36.411577,2.40736"
+         id="path72"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.13188004;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,115.9679 c 18.205788,0 18.205788,7.22209 36.411577,7.22209"
+         id="path74"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:0.56233799;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 44.171274,142.4489 c 18.205786,0 18.205786,-4.81473 36.411576,-4.81473"
+         id="path76"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:2.11133003;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 44.171274,142.4489 c 18.205786,0 18.205786,0 36.411576,0"
+         id="path78"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:0.72101498;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 44.171274,142.4489 c 18.205786,0 18.205786,4.81473 36.411576,4.81473"
+         id="path80"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,137.63417 c 18.205788,0 18.205788,-4.81473 36.411577,-4.81473"
+         id="path82"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.44215012;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,137.63417 c 18.205788,0 18.205788,0 36.411577,0"
+         id="path84"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.32596993;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,137.63417 c 18.205788,0 18.205788,4.81473 36.411577,4.81473"
+         id="path86"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:2.11133003;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 44.171274,176.152 c 18.205786,0 18.205786,0 36.411576,0"
+         id="path88"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.10449004;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 44.171274,161.70782 c 18.205786,0 18.205786,-4.81473 36.411576,-4.81473"
+         id="path90"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.51724005;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 44.171274,161.70782 c 18.205786,0 18.205786,0 36.411576,0"
+         id="path92"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:0.55950397;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 44.171274,161.70782 c 18.205786,0 18.205786,4.81472 36.411576,4.81472"
+         id="path94"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:0.53872502;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,171.33727 c 18.205788,0 18.205788,-9.62945 36.411577,-9.62945"
+         id="path96"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.51724005;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,171.33727 c 18.205788,0 18.205788,4.81473 36.411577,4.81473"
+         id="path98"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.10449004;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m 7.759697,171.33727 c 18.205788,0 18.205788,9.62946 36.411577,9.62946"
+         id="path100"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:0.67095602;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,141.24522 c 18.205788,0 18.205788,-30.09205 36.411577,-30.09205"
+         id="path102"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.96824002;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,141.24522 c 18.205788,0 18.205788,-25.27732 36.411577,-25.27732"
+         id="path104"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.60366011;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,141.24522 c 18.205788,0 18.205788,-3.61105 36.411577,-3.61105"
+         id="path106"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.44215012;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,141.24522 c 18.205788,0 18.205788,7.62332 36.411577,7.62332"
+         id="path108"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:2.21617007;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,141.24522 c 18.205788,0 18.205788,18.85768 36.411577,18.85768"
+         id="path110"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:2.07922006;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -28.65188,141.24522 c 18.205788,0 18.205788,30.09205 36.411577,30.09205"
+         id="path112"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:1.51724005;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -65.06346,151.47652 c 18.20579,0 18.20579,-60.78595 36.41158,-60.78595"
+         id="path114"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -65.06346,151.47652 c 18.20579,0 18.20579,-10.2313 36.41158,-10.2313"
+         id="path116"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.96824002;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -65.06346,151.47652 c 18.20579,0 18.20579,2.10644 36.41158,2.10644"
+         id="path118"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.49031997;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -65.06346,151.47652 c 18.20579,0 18.20579,14.44418 36.41158,14.44418"
+         id="path120"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.29857993;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -65.06346,151.47652 c 18.20579,0 18.20579,26.78193 36.41158,26.78193"
+         id="path122"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.18241;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -65.06346,151.47652 c 18.20579,0 18.20579,39.11967 36.41158,39.11967"
+         id="path124"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.0520699;stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         d="m -65.06346,151.47652 c 18.20579,0 18.20579,60.78595 36.41158,60.78595"
+         id="path126"
+         inkscape:connector-curvature="0"
+         style="stroke:#cccccc;stroke-width:3.01239991;stroke-linecap:butt;stroke-linejoin:round" />
+      <ellipse
+         cx="7.759697"
+         cy="207.44772"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse128"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="207.44772"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse130"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(10.01322,206.076)"
+         id="text132"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.04296875"
+           y="2"
+           id="tspan134"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100b1c0209afa98e3c1</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="212.26247"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse136"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="212.26247"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse138"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(10.269571,211.36827)"
+         id="text140"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.2265625"
+           y="2"
+           id="tspan142"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1002195d39f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="17.431641"
+           y="2"
+           id="tspan144"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">fbb35b38</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="217.07719"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse146"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="217.07719"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse148"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(10.405224,216.0772)"
+         id="text150"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.20849609"
+           y="2"
+           id="tspan152"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100287e38857c6d8887</tspan>
+      </text>
+      <ellipse
+         cx="-28.65188"
+         cy="212.26247"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse154"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="-28.65188"
+         cy="212.26247"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse156"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-46.402794,211.34052)"
+         id="text158"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.10644531"
+           y="2"
+           id="tspan160"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">domain,imphash,ip</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="195.41092"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse162"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="195.41092"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse164"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.493845,194.38667)"
+         id="text166"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.20849609"
+           y="2"
+           id="tspan168"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1002ca2a2e6edde9d6e</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="190.59619"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse170"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="190.59619"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse172"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.383116,189.2485)"
+         id="text174"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.2265625"
+           y="2"
+           id="tspan176"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1004b01b5f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="16.319336"
+           y="2"
+           id="tspan178"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">fda48a0ab</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="193.00356"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse180"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="193.00356"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse182"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-3.531534,191.32487)"
+         id="text184"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.1640625"
+           y="2"
+           id="tspan186"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">imphash,ip</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="183.3741"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse188"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="183.3741"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse190"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(10.228596,182.43045)"
+         id="text192"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.20898438"
+           y="2"
+           id="tspan194"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100f02a4391e85d3f2b</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="188.18883"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse196"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="188.18883"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse198"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(10.138903,187.2068)"
+         id="text200"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.43066406"
+           y="2"
+           id="tspan202"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1003f0ba0a3bb9a8087</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="197.81828"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse204"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="197.81828"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse206"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(10.385286,196.81976)"
+         id="text208"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.15234375"
+           y="2"
+           id="tspan210"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100837a5ad13bba4122</tspan>
+      </text>
+      <ellipse
+         cx="-28.65188"
+         cy="190.59619"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse212"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="-28.65188"
+         cy="190.59619"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse214"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-46.659145,189.59619)"
+         id="text216"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.10644531"
+           y="2"
+           id="tspan218"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">domain,imphash,ip</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="99.116348"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse220"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="99.116348"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse222"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.237494,98.11635)"
+         id="text224"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.48681641"
+           y="2"
+           id="tspan226"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100f3c2bd8b0a3db7ba</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="99.116348"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse228"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="99.116348"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse230"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-3.017335,97.80211)"
+         id="text232"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.16308594"
+           y="2"
+           id="tspan234"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">pehash,ip</tspan>
+      </text>
+      <ellipse
+         cx="80.582848"
+         cy="84.672157"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse236"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="80.582848"
+         cy="84.672157"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse238"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(82.87942,83.67216)"
+         id="text240"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.43066406"
+           y="2"
+           id="tspan242"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100329fb907154227d7</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="84.672157"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse244"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="84.672157"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse246"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(40.15578,83.67216)"
+         id="text248"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.2216797"
+           y="2"
+           id="tspan250"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">ip</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="89.486893"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse252"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="89.486893"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse254"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.483876,88.48689)"
+         id="text256"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.43066406"
+           y="2"
+           id="tspan258"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1007623f349a4402e73</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="79.85743"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse260"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="79.85743"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse262"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.483876,78.6759)"
+         id="text264"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.04296875"
+           y="2"
+           id="tspan266"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100f9c7caa7689d9e5a</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="75.042702"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse268"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="75.042702"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse270"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.17238,74.13869)"
+         id="text272"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.48681641"
+           y="2"
+           id="tspan274"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1006cb4447e9a2efe47</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="82.264801"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse276"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="82.264801"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse278"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-2.726091,80.98524)"
+         id="text280"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.1640625"
+           y="2"
+           id="tspan282"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">domain,ip</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="93.499161"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse284"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="93.499161"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse286"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(10.128934,92.49916)"
+         id="text288"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.20898438"
+           y="2"
+           id="tspan290"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100597bf5aa48a37fda</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="87.881981"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse292"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="87.881981"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse294"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(9.993281,86.88198)"
+         id="text296"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.04296875"
+           y="2"
+           id="tspan298"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100fddc455b6ca699e4</tspan>
+      </text>
+      <ellipse
+         cx="-28.65188"
+         cy="90.690567"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse300"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="-28.65188"
+         cy="90.690567"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse302"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-45.30262,89.80886)"
+         id="text304"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.10546875"
+           y="2"
+           id="tspan306"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">domain,pehash,ip</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="123.18999"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse308"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="123.18999"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse310"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(45.944113,122.27583)"
+         id="text312"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.15576172"
+           y="2"
+           id="tspan314"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100b7c0fe20d6f4cf2c</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="113.56053"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse316"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="113.56053"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse318"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(45.944113,112.65098)"
+         id="text320"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.099121086"
+           y="2"
+           id="tspan322"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100cbe0305187abcc2f</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="118.37526"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse324"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="118.37526"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse326"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.35392,117.54887)"
+         id="text328"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.15234375"
+           y="2"
+           id="tspan330"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1003060e42d64728677</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="108.7458"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse332"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="108.7458"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse334"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.216843,107.926)"
+         id="text336"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.22607422"
+           y="2"
+           id="tspan338"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1008913d21</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="16.763184"
+           y="2"
+           id="tspan340"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">1391e6978</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="115.9679"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse342"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="115.9679"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse344"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-8.379968,114.68834)"
+         id="text346"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.16162109"
+           y="2"
+           id="tspan348"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">pehash,imphash</tspan>
+      </text>
+      <ellipse
+         cx="80.582848"
+         cy="142.4489"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse350"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="80.582848"
+         cy="142.4489"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse352"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(82.69604,141.52752)"
+         id="text354"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.26464844"
+           y="2"
+           id="tspan356"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100b3437ac53e6aac87</tspan>
+      </text>
+      <ellipse
+         cx="80.582848"
+         cy="147.26363"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse358"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="80.582848"
+         cy="147.26363"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse360"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(83.11119,146.43978)"
+         id="text362"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.20849609"
+           y="2"
+           id="tspan364"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb10095c104464a360010</tspan>
+      </text>
+      <ellipse
+         cx="80.582848"
+         cy="137.63417"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse366"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="80.582848"
+         cy="137.63417"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse368"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(82.97589,136.43592)"
+         id="text370"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.043457031"
+           y="2"
+           id="tspan372"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100faceeefe1defd438</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="142.4489"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse374"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="142.4489"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse376"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(35.108035,141.55282)"
+         id="text378"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.22021484"
+           y="2"
+           id="tspan380"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">imphash</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="137.63417"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse382"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="137.63417"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse384"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.483876,136.81344)"
+         id="text386"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.48681641"
+           y="2"
+           id="tspan388"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100c9546570455484df</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="132.81944"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse390"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="132.81944"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse392"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.61953,131.52614)"
+         id="text394"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.099609382"
+           y="2"
+           id="tspan396"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb1000cfcdddf4bd6bfbb</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="137.63417"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse398"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="137.63417"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse400"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-8.102966,136.36156)"
+         id="text402"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.16259766"
+           y="2"
+           id="tspan404"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">domain,imphash</tspan>
+      </text>
+      <ellipse
+         cx="80.582848"
+         cy="176.15199"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse406"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="80.582848"
+         cy="176.15199"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse408"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(82.83953,175.32078)"
+         id="text410"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.04296875"
+           y="2"
+           id="tspan412"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb100ca4c09733b697fad</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="176.15199"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse414"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="176.15199"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse416"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(35.869715,174.87939)"
+         id="text418"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.21923828"
+           y="2"
+           id="tspan420"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">pehash</tspan>
+      </text>
+      <ellipse
+         cx="80.582848"
+         cy="156.89308"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse422"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="80.582848"
+         cy="156.89308"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse424"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(82.6996,156.06017)"
+         id="text426"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.061035156"
+           y="2"
+           id="tspan428"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.2553711"
+           y="2"
+           id="tspan430"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f8df24593c3d04e0e</tspan>
+      </text>
+      <ellipse
+         cx="80.582848"
+         cy="166.52254"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse432"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="80.582848"
+         cy="166.52254"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse434"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(82.97447,165.69295)"
+         id="text436"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.061035156"
+           y="2"
+           id="tspan438"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.2553711"
+           y="2"
+           id="tspan440"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f0d4665b3f1ca2ab6</tspan>
+      </text>
+      <ellipse
+         cx="80.582848"
+         cy="161.70782"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse442"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="80.582848"
+         cy="161.70782"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse444"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(82.84238,160.7792)"
+         id="text446"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.28271484"
+           y="2"
+           id="tspan448"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.4770508"
+           y="2"
+           id="tspan450"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f0ba8bc78a1455bae</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="161.70782"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse452"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="161.70782"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse454"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(35.59912,160.81173)"
+         id="text456"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.22021484"
+           y="2"
+           id="tspan458"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">domain</tspan>
+      </text>
+      <ellipse
+         cx="44.171272"
+         cy="180.96674"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse460"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="44.171272"
+         cy="180.96674"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse462"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(46.62309,179.78972)"
+         id="text464"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.061035156"
+           y="2"
+           id="tspan466"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.2553711"
+           y="2"
+           id="tspan468"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f6f3979058e26c962</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="171.33727"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse470"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="171.33727"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse472"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-7.341286,170.06466)"
+         id="text474"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.16162109"
+           y="2"
+           id="tspan476"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">domain,pehash</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="111.15317"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse478"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="111.15317"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse480"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(9.585611,110.19807)"
+         id="text482"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.28320312"
+           y="2"
+           id="tspan484"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.4775391"
+           y="2"
+           id="tspan486"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f6f2793e3154571fd</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="160.10291"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse488"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="160.10291"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse490"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(9.316442,158.89258)"
+         id="text492"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.061035156"
+           y="2"
+           id="tspan494"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.2553711"
+           y="2"
+           id="tspan496"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f6b866d1f0aa5ce12</tspan>
+      </text>
+      <ellipse
+         cx="7.759697"
+         cy="148.86855"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse498"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="7.759697"
+         cy="148.86855"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse500"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(10.133207,147.86854)"
+         id="text502"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.2265625"
+           y="2"
+           id="tspan504"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.420898"
+           y="2"
+           id="tspan506"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f2658debb81590605</tspan>
+      </text>
+      <ellipse
+         cx="-28.65188"
+         cy="141.24522"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse508"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="-28.65188"
+         cy="141.24522"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse510"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-51.865805,140.24522)"
+         id="text512"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.10400391"
+           y="2"
+           id="tspan514"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">domain,pehash,imphash</tspan>
+      </text>
+      <ellipse
+         cx="-29.455076"
+         cy="153.58296"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse516"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="-29.455076"
+         cy="153.58296"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse518"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-27.852417,152.47866)"
+         id="text520"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.2265625"
+           y="2"
+           id="tspan522"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.420898"
+           y="2"
+           id="tspan524"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">fa2225885663ee3bb</tspan>
+      </text>
+      <ellipse
+         cx="-28.922474"
+         cy="178.63498"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse526"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="-28.922474"
+         cy="178.63498"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse528"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-26.632966,177.77467)"
+         id="text530"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.28271484"
+           y="2"
+           id="tspan532"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.4770508"
+           y="2"
+           id="tspan534"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f7b26e1373bb1c1bd</tspan>
+      </text>
+      <ellipse
+         cx="-28.65188"
+         cy="165.9207"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse536"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="-28.65188"
+         cy="165.9207"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse538"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-26.902848,164.9379)"
+         id="text540"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.33935547"
+           y="2"
+           id="tspan542"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.5336909"
+           y="2"
+           id="tspan544"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f6a82f692f21c903a</tspan>
+      </text>
+      <ellipse
+         cx="-65.059502"
+         cy="150.67462"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse546"
+         style="fill:#ffffff" />
+      <ellipse
+         cx="-65.059502"
+         cy="150.67462"
+         rx="0.8031978"
+         ry="1.3382134"
+         id="ellipse548"
+         style="stroke:#4682b4;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round" />
+      <text
+         transform="translate(-91.60957,149.67462)"
+         id="text550"
+         style="line-height:0%;fill:#000000">
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="0.33935547"
+           y="2"
+           id="tspan552"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">599eb0f</tspan>
+        <tspan
+           font-size="2"
+           font-weight="500"
+           x="7.5336909"
+           y="2"
+           id="tspan554"
+           style="font-weight:500;font-size:2px;font-family:Helvetica">f208a37dc9db2f4f9</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

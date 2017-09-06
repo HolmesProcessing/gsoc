@@ -1,3 +1,15 @@
 ---
 layout: style
 ---
+
+.spaced-list > li {
+	margin-bottom: 20px;
+}
+
+.modal-descriptive-image {
+	text-align: center !important;
+}
+
+.modal-descriptive-image img {
+	margin-bottom: 0 !important;
+}

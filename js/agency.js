@@ -13,6 +13,11 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+
+    //auto open modals
+    if(window.location.href.indexOf('#portfolioModal') != -1) {
+        $('#'+window.location.hash.substr(1)).modal('show');
+    }
 });
 
 // Highlight the top nav as scrolling occurs
@@ -26,12 +31,17 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 $('div.modal').on('show.bs.modal', function() {
-	var modal = this;
-	var hash = modal.id;
-	window.location.hash = hash;
-	window.onhashchange = function() {
-		if (!location.hash){
-			$(modal).modal('hide');
-		}
-	}
+    var modal = this;
+    var hash = modal.id;
+    window.location.hash = hash;
+    window.onhashchange = function() {
+        if (!location.hash){
+            $(modal).modal('hide');
+        }
+    }
+});
+
+// actually remove modal hash from url if it's closed
+$('div.modal').on('hide.bs.modal', function() {
+    window.location.hash = '';
 });

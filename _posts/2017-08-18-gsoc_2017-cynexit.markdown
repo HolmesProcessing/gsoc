@@ -1,19 +1,76 @@
 ---
-title: Project Title
-subtitle: Project Subtitle
+title: Holmes-Analytics
+subtitle: Interface, Scheduler & Scalable Framework
 layout: default
-modal-id: 1
+modal-id: 4
 category: gsoc2017
 date: 2017-01-01
-img: temp.svg
-thumbnail: temp.svg
+img: investigation.svg
+thumbnail: investigation.svg
 alt: license-img
-repository: https://github.com/HolmesProcessing/gsoc_
+repository: https://github.com/HolmesProcessing/Holmes-Analytics
 documentation: 
 license: 
 
 ---
 
-##### Overview
 
-Content Goes Here
+### Preamble
+Back in the days when Holmes-Processing was born, it only consisted of one tool, [Totem](https://github.com/HolmesProcessing/Holmes-Totem). Totem excels at feature extraction and is still one of the most flexible and streamlined tools for this job on the market. After playing with Totem for a while it was obvious that we needed to get away from the single threaded python script that acted as a webserver for Totem to pull files from and also away from simply dumping results into mongoDB.
+
+To tackle both issues, we needed a general-purpose storage tool that would abstract all of that away by providing a simple API to retrieve and save files as well as support data from multiple backends. This led to the development of [Holmes-Storage](https://github.com/HolmesProcessing/Holmes-Storage) to make it easier for admins and researchers alike to work with Totem and its results since you could just switch from mongoDB to Cassandra and from files on a local disk to S3 or Minio without touching Totem or anything attached to the rest of the infrastructure.
+
+A few other smaller tools followed to make Holmes-Processing more feasible for "everyday use" like [Gateway](https://github.com/HolmesProcessing/Holmes-Gateway) and a simple [frontend](https://github.com/HolmesProcessing/archive-Holmes-Frontend) (that quickly got outdated), but one big piece was always missing: a native way to handle and schedule our own machine learning tasks based on the data we extracted. This is the reason Holmes-Analytics was developed.
+
+
+### The Project
+Holmes-Analytics is a scheduler for various data-driven tasks like machine learning and advanced statistics as well as a scalable framework for these kinds of jobs - or services if you will - to easily integrate them into the Holmes-Processing ecosystem and connect them with your data without the need for overly specific backbone handling.
+
+
+### Technical Deep Dive
+Holmes-Analytics is written in Scala using, as much as possible, the actor model provided by akka. If you are not familiar with this concept you can check out this [good and short introduction from Brian Storti](http://www.brianstorti.com/the-actor-model/).
+HA currently consists of nine actors to split the work and responsibilities in a logical fashion. To give you a better overview we will introduce each worker briefly. 
+
+![actor model](img/cynexit/holmes-analytics-actor-layout-v0.3.png){: .img-responsive}
+*The actor layout as a diagram*
+{: .modal-descriptive-image}
+
+* __Analytic Supervisor:__ This actor is very simple and small. It acts as our user root node and is responsible for initializing Core, Analytic Engine Manager, and Analytic Service Manager.
+* __Core:__ The Core actor is responsible for managing the WebServer, RabbitConsumer and Scheduler as these are the "core parts" of HE. If you don’t intend to redo the structure of the whole system it is probably not important to you. 
+* __WebServer:__ The WebServer actor serves two purposes. It provides the HTTP API which is used to kick of jobs, retrieve results, and is used to generally provide all functions of the system to users and other machines. It also serves a web frontend which is used to make it easier for humans to interact with Holmes.
+* __RabbitConsumer:__ If you don’t want to use the HTTP API or have tasks or data that does not depend on a response you can also use this AMQP based API provided by this actor.
+* __Scheduler:__ The Scheduler actor is in charge of managing jobs. He creates, stops, and keeps track of all Job actors that represent a running or finished job. He is the sole point where jobs are created and managed, no other actor should have Job actors as children.
+* __Job:__ A Job actor represents a service being executed on an engine, the life cycle therefore consists of the actor…
+    1. ...being created by the Scheduler
+    2. ...asks the Analytic Engine Manger for an available Analytic Engine actor to execute his service on, for example a Spark Instance
+    3. ...asks the Analytic Service Manager for a new instance (not actor) of the service
+    4. ...executes the build/preparation process of the service
+    5. ...sends the service to the engine
+    6. ...monitors the executing, updating its internal state if needed
+During this the actor can always be asked by the Scheduler to for its status or the result of the service if there is one.
+* __Analytic Engine Manager:__ The AEM can best be described as a generic dispatcher for Analytic Engine actors. Since Holmes-Analytics can support multiple engines at once a Job actor can ask for a Spark instance or a Tensorflow instance which is then prepared by the AEM and handed over.
+* __Analytic Engine:__ A AE actor is an abstract representation of an analytic engine providing functions to run a file on said engine, monitor, and stop the execution. This is needed so each Job is encapsulated and won’t interfere with any other Job using the same Spark cluster for example.
+* __Analytic Service Manager:__ The ASM actor knows all services and can create a new class instance for each one. A service is not represented as an actor since each instance can be completely customized by the creator as long as it fits the generic service trait.
+{: .text-left .spaced-list}
+
+### Usage example
+This whole system allows us to automate a lot of processes. An example would be a fully automated email security system: you feed a copy of each attachment via Gateway into Storage, the triage process kicks off and performs feature extraction using totem, the new results are then saved via Storage and a new Analytic Job is kicked off via the HTTP API to do similarity matching on the binary to find out if it’s potentially malicious. The results could then even be emended into a third-party dashboard thanks to the API and staff could act if necessary.
+
+Generally speaking what we have here is a fully automatable processing pipeline from start to finish designed to give security researchers a helping hand by removing a lot of DevOps overhead.
+
+![actor model](img/cynexit/holmes-analytics-frontend-alpha.png){: .img-responsive}
+*Screenshot of the frontend in a very early stage*
+{: .modal-descriptive-image}
+
+### Future Work
+To improve this model even more we plan to add streaming capabilities to Holmes-Storage, add more support for different engines and work on the web frontend. The biggest chunk of work however will be to add more services which are ready to be used by everyone that is using the Holmes infrastructure.
+Besides this, documentation should be improved by providing a simple "quick start guide" on how to set everything up.
+
+
+##### Work done for Google Summer of Code
+[All commits from this list](https://github.com/HolmesProcessing/Holmes-Analytics/commits/master?author=cynexit) between May 30 and August 29, 2017 are officially part of GSoC 2017.
+
+
+##### About the author
+Christian von Pentz is currently pursuing his master in computer science at the [Technical University of Munich](https://www.tum.de/) and works at the chair for IT Security. He teaches the Web Application Security course, focuses on large scale malware analysis, and has spoken at DCC. He is also an avid CTF player at [hxp](https://hxp.io) and core contributor of Holmes-Processing. He spends his free time building impractical desktop computers.
+
