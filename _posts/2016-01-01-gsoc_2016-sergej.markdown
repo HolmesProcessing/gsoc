@@ -1,10 +1,10 @@
 ---
-title: Project Title
-subtitle: Project Subtitle
+title: Foundations for DRAKVUF on ARM
+subtitle:
 layout: default
-modal-id: 1
+modal-id: 2
 category: gsoc2016
-date: 2016-01-01
+date: 2017-10-29
 img: temp.svg
 thumbnail: temp.svg
 alt: license-img
@@ -14,6 +14,108 @@ license:
 
 ---
 
-##### Overview
+### Overview
 
-Content Goes Here
+In 2016, I have participated in [Google's Summer of Code](https://summerofcode.withgoogle.com/archive/2016/projects/6408159388237824/) (GSoC). In this blog, I summarize my impressions about the program and the open source community and provide an overview of my work.
+
+### About Me
+
+My name is Sergej Proskurin. I am a Computer Science PhD candidate at the Technical University of Munich. My research interests and areas cover a wide range of low level and IT security related topics. These include Virtual Machine Introspection (VMI), hypervisor/OS design and security, rootkits, reverse engineering, and Trusted Computing. I like playing around with hardware and hack the hell out of the kernel. In addition to my research, I offer and support practical courses, seminars, and lectures to university students within the area of rootkit programming, reverse engineering, and operating systems.
+
+### Open Source Community
+
+Open source projects can be extremely overwhelming, especially to developers with no or only limited experience within the open source world. Thus, I believe that the Google Summer of Code program does a great job in introducing newcomers to this ideology by taking over the role of an initiator constantly pushing to achieve great results. Apart from initial familiarization with a potentially unknown project, students, such as myself, find themselves being introduced by their mentors to this unknown, entirely different philosophy of developing code. By overcoming initial obstacles, such as getting one's bearings by finding the red thread within the immense amount of emails in development mailing lists, conquering git (and yes, I am not talking about the daily push/pull business) considering the heavily influx code base, and getting over the fact that the underlying interfaces defining your code can change any minute, you will eventually find yourself getting along with a large, highly innovative community advancing the project in various directions. Admittedly, getting involved in open source is a lot of work. However, it is really worth the effort to be part of this community as we all know what we get from the open source world. In retrospect, I can report that it was a great experience getting deeply involved into one of the biggest open source project.
+
+
+### GSoC 2016
+
+With the Google's Summer of Code (GSoC)\[0\] program Google is trying to motivate students from all over the world to participate in open source projects managed by various organizations. Therefore, every Google accepted organization publishes a number of topics relevant for the open source community. These topics are specially designed for GSoC students, which can either apply for one specific topic or simply suggest an interesting topic on their own. Accepted students are supervised by at least one mentor of the particular organization and sponsored by Google over a period of about three months -- Google's notion for the "Summer of Code". 
+
+Personally, I like the open source character of GSoC, which was the reason why I decided to apply for this year's event. I have applied for a project through the Honeynet Project\[1\]. To be more precise, my goal was to extend the open-source Xen hypervisor\[2\] to establish a foundation for DRAKVUF\[3\] on the ARM architecture. My project's abstract can be found on GSoC's homepage\[4\]. DRAKVUF is an open source, virtualization based binary analysis framework running on top of the Xen hypervisor. By using Virtual Machine Introspection (VMI) techniques, DRAKVUF is able to transparently monitor and control the state of a virtual machine from a level beyond the OS. While DRAKVUF is a powerful means to analyze malware, its use is currently limited to x86-64 based architectures. So, my GSoC project aimed to shift the scope of application of DRAKVUF towards ARM and thus the mobile market ultimately providing powerful malware analysis on mobile devices. 
+
+On x86-64 based systems, DRAKFUV is able -- among others -- to instrument and thus monitor binaries of interest for various analysis purposes. Even more, this can be done in a highly stealthy way by utilizing the system's hardware virtualization extensions. In short, the main idea is to maintain multiple 2nd stage memory translation tables representing different memory views for guests on the side of the hypervisor. For instance, the hypervisor can be configured to duplicate a specific page in the host's physical memory and assign one execute-only and one read-only view of the same page. While the execute-only page can be arbitrarily altered by the VMI-aware hypervisor or DRAKVUF for monitoring purposes, all guest read accesses to this particular page generate 2nd stage access violations and thus force the guest to trap into the hypervisor. On such violations, the hypervisor can switch to the integer, read-only memory view and satisfy the requested read access. Even more, modern Intel architectures allow to perform this switch without the need for expensive, explicit traps into the hypervisor but rather handle memory view switching directly within the context of the guest through the most recent virtualization extension called Virtualization Exceptions (#VE). After a read-request has been satisfied, the hypervisor can switch back to the altered, execute-only view and proceed guest execution. This mechanism is facilitated through the Xen altp2m subsystem\[5\] and is employed by DRAKVUF. 
+
+While the ARM architecture, does not provide sufficient hardware support to perform such as switch entirely in hardware, it is possible to enable a similar behavior in software. This is exactly the part where I come into play: The more specific goal of my GSoC project is to implement Xen's altp2m subsystem for ARM. 
+
+> **References:**
+> 
+\[0\] [Google Summer of Code](https://summerofcode.withgoogle.com/archive/2016/projects/6408159388237824/)
+\[1\] [The Honeynet Project](https://www.honeynet.org/)
+\[2\] [The Xen Project Hypervisor](http://xenbits.xenproject.org/)
+\[3\] [DRAKVUF](https://drakvuf.com/) 
+\[4\] [Foundations for DRAKVUF on ARM](https://summerofcode.withgoogle.com/archive/2016/projects/6408159388237824/)
+\[5\] [Stealthy monitoring with Xen altp2m](https://blog.xenproject.org/author/tlengyel/)
+
+### Xen altp2m on ARM
+
+The introduction in one of my previous posts shortly describes the idea behind GSoC and mentions the topic I have been working on during the "Summer of Code". This post gives a general idea of altp2m on ARM and talks about my achievements. 
+
+#### Recap on Virtualization and Virtual Machine Introspection
+
+Before we can talk about Xen's subsystem altp2m, we need to recap our knowledge about virtual machines (VMs) or hypervisors and Virtual Machine Introspection (VMI). Without going into details, system virtualization is about introducing isolated execution environments for entire systems -- each with its own operating system (OS)\[0\]. Similar to x86, the ARM architecture provides its own set of hardware virtualization extensions that simplifies the process of system virtualization. These virtualization extensions strongly differ from architecture to architecture but have the following properties in common: An additional, high privileged mode that is specially designed for the hypervisor (VMX-root on x86; HYP mode on ARM) and the virtualization of the guest's physical memory through a hardware supported set of second level address translation tables (EPT/NPT on x86; 2nd stage translation tables on ARM). Most common hypervisors, including the open source KVM and Xen hypervisor, make use of these virtualization extensions to virtualize guest systems. 
+
+Virtualization technology entails various benefits, such as flexibility and resource utilization. Besides, in the recent years, virtualization technology has been increasingly leveraged for security purposes. In this context, security applications were moved out of the operating systems into a hypervisor with a smaller attack surface and higher privileges to perform Virtual Machine Introspection\[1\]. In this way, the omniscient character of hypervisors lends security applications the necessary means for observation, analysis, and control of guest virtual machines. The term VMI has been coined by Garfinkel et al.\[1\] and used since 2003 to describe the ability of analyzing and manipulating the guest's state from the outside of the VM. To prevent, e.g., split-personality malware to register that it is being analyzed, the entire VMI process must be performed in a stealthy way. 
+
+By its nature, VMI achieves a high degree of stealthiness as it operates from a level below the actual operating system. Yet, when it comes to VMI-based dynamic (malware) analysis or debuggers, the guest system needs to be modified. For instance, instead of using hardware breakpoints that are limited in number and potentially used by the guest system itself (for benign or obfuscation purposes), one could apply software breakpoints or perform further instrumentation of a specific application in question so that the application eventually traps into the underlying hypervisor for monitoring purposes. Obviously, this mechanism almost screams for exposure. In this scenario a simple integrity checker might be sufficient to reveal the fact that an application is being monitored or at least has been modified. In the face of a malicious application, such exposures would potentially lead to a different behavior of the malware instance itself impeding analysis. In case of benign OS-level integrity checkers, such exposure might even lead to a system crash, as it is the case with Windows and PatchGuard. Consequently, these issues demand a mechanism that cannot be revealed that easily. And this is where Xen's subsystem altp2m comes into play. 
+
+#### Xen altp2m and its application
+
+The Xen subsystem altp2m stands for alternate p2m. In this context, the term p2m refers to a second level address translation table translating guest physical addresses (p) to host physical or in Xen's jargon machine addresses (m). Usually, there is one p2m table per guest domain that is managed by Xen. This has been changed with alternate p2m tables. On x86 or more precisely on modern Intel architectures, a p2m table can be regarded as an EPT table represented by the EPTP pointer within the hardware defined data structure VMCS -- whereas the VMCS holds the host's and the guest's state and further VM control information. The interesting thing about the VMCS is that it is capable of holding up to 512 EPTPs. That is, one could define up to 512 EPT tables (and hence p2m's). Besides, the Intel architecture allows to dynamically switch between the EPTs by means of the VMFUNC instruction and/or the recent Virtualization Exceptions (#VE). That is, the idea behind altp2m on Xen is to maintain multiple (currently up to 10) p2m's representing different guest memory views. 
+
+<br />
+<br />
+<div style="max-width: 800px; text-align: center;">
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blog.xenproject.org/wp-content/uploads/2016/04/p2m-245x300.png" style="margin-left: auto; margin-right: auto;">
+            <img border="0" height="300" src="https://blog.xenproject.org/wp-content/uploads/2016/04/p2m-245x300.png" width="245" />
+        </a>
+        <a href="https://blog.xenproject.org/wp-content/uploads/2016/04/altp2m-259x300.png" style="margin-left: auto; margin-right: auto;">
+            <img border="0" height="300" src="https://blog.xenproject.org/wp-content/uploads/2016/04/altp2m-259x300.png" width="259" />
+        </a>
+    </div>
+<div center="" class="caption" text-align:="">
+Guest physical to machine physical address translation through p2m (left) and altp2m (right). Both figures have been taken from [2].</div>
+</div>
+<br />
+
+One example of how these views can be used in practice is given by DRAKVUF. DRAKVUF first duplicates host physical or machine code-pages of an application executing inside a specific domain (VM). Then, DRAKVUF injects, e.g., previously discussed software breakpoints into one of this page, while the other one remains integer. By employing Xen's altp2m, DRAKVUF defines two guest memory views by marking the modified machine physical page as execute-only and the integer page as read-only. That is, prohibited read accesses on the execute-only page induce an EPT violation. The same applies to instruction fetches on the read-only page. An EPT violation is then handled either by the underlying hypervisor or even directly within the guest context (through the #VE) by switching the memory views. In this simplified scenario, read accesses performed, e.g., by integrity checkers are satisfied by providing the integer view, while the guest continues execution of the modified, shadow copy of this page. This way, previously discussed software breakpoints or even further instrumentation can be effectively hidden from the guest. 
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blog.xenproject.org/wp-content/uploads/2016/04/altp2m-shadow-217x300.png" imageanchor="1">
+        <img border="none" height="300" src="https://blog.xenproject.org/wp-content/uploads/2016/04/altp2m-shadow-217x300.png" width="217" />
+    </a>
+
+<div class="caption">
+The VMM maintains a shadow copy of the original code-page providing two different views of the guest memory. The figure has been taken from [2].<br />
+<br /></div>
+</div>
+
+#### Alternate p2m on ARM
+
+As opposed to the x86 architecture, ARM does not provide hardware support for p2m switching. Nevertheless, a similar behavior can be emulated in software, which is exactly what I did during my Summer of Code. While trying to preserve the original functionality of altp2m, I ported the entire altp2m code base to ARM and adjusted the implementation according to requests of the open source community. The implemented altp2m functionality thus acts as a foundation for DRAKVUF on ARM. 
+
+During the GSoC development period, I have submitted three patch series, which can be found in the xen-devel mailing list archieves: 
+
+> **Patches on xen-devel:**
+> 
+* [[xen-devel] Patch v1: Introducing altp2m to ARM](https://lists.xen.org/archives/html/xen-devel/2016-07/msg00136.html)
+* [[xen-devel] Patch v2: Introducing altp2m to ARM](https://lists.xen.org/archives/html/xen-devel/2016-08/msg00152.html)
+* [[xen-devel] Patch v3: Introducing altp2m to ARM](https://lists.xen.org/archives/html/xen-devel/2016-08/msg02071.html)
+* [[xen-devel] Patch v4: Introducing altp2m to ARM](https://lists.xen.org/archives/html/xen-devel/2017-08/msg03750.html)
+
+The code to the patches can be found on my github repository: 
+
+> **Source:**
+> 
+* [Patch v1](https://github.com/sergej-proskurin/xen/commits/arm-altp2m-patch) branch arm-altp2m-patch
+* [Patch v2](https://github.com/sergej-proskurin/xen/commits/arm-altp2m-v2) branch arm-altp2m-v2
+* [Patch v3](https://github.com/sergej-proskurin/xen/commits/arm-altp2m-v3) branch arm-altp2m-v3
+* [Patch v4](https://github.com/sergej-proskurin/xen/commits/arm-altp2m-v4) branch arm-altp2m-v4
+
+While the patches have not yet been merged into the Xen mainline code base, we hope that it will be part of one of the upcoming Xen releases. 
+
+> **References:**
+> 
+\[0\] J. Smith and R. Nair. Virtual Machines: Versatile Platforms for Systems and Processes. San Francisco, CA, USA: Morgan Kaufmann Publishers Inc., 2005. 
+\[1\] T. Garfinkel and M. Rosenblum. A Virtual Machine Introspection Based Architecture for Intrusion Detection. In: NDSS. Vol. 3. 2003, pp. 191–206. 
+\[2\] [Stealthy monitoring with Xen altp2m](https://blog.xenproject.org/author/tlengyel/)
