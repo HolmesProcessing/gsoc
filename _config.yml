@@ -3,7 +3,7 @@ baseurl:
 
 # Site settings
 title: Holmes Processing
-copyright: 2017 Holmes Group LLC
+copyright: 2018 Holmes Group LLC
 email: your-email@domain.com
 description: "Holmes Processing is an open source and enterprise ready collection of tools for analyzing cyber security data. It provides the scalability, resilience, and flexibility needed to process 10s of millions of samples."
 

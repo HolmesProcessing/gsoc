@@ -1,0 +1,150 @@
+---
+title: Holmes Processing: Automated Malware Relationship Mining
+subtitle: Analytic Pipeline
+layout: default
+modal-id: 8
+category: gsoc2018
+date: 2018-08-14
+img: relationship.svg
+thumbnail: relationship.svg
+alt: license-img
+repository: https://github.com/HolmesProcessing/gsoc18relationship
+documentation: https://github.com/HolmesProcessing/gsoc18relationship/blob/master/README.md
+license: https://github.com/HolmesProcessing/gsoc18relationship/blob/master/LICENSE
+
+---
+
+### Overview
+
+Since last year, Holmes-Processing has acquired a large dataset of labeled malware samples, which can be used for deep learning based malware relationship mining. This labeled dataset of over 50k samples should be a big help to do malware relationship detection. Besides, as a result of the previous GSoC’17, we also have an efficient data model for the malware relationships.
+
+Therefore, the goals of this project are to
+
+1. implement a decent learning model to predict labels of each malware sample
+2. discover relationships between different malware samples
+3. visualize relationships in frontend
+4. and build an analytic pipeline to integrate the implemented services.
+
+### Architecture
+
+![Analytic Pipeline](img/ctsung/architecture.png){: .img-responsive}
+*The analytic pipeline*
+{: .modal-descriptive-image}
+
+Above is the architecture of the pipeline. It contains two servers in the backend: Feed Handling and Tensorflow server. User in the frontend can either ask to visualize relationships of any desired malware samples (A), or send model training request (B).
+
+The pipeline is mainly written in Python. To handle requests from the frontend or stream data between different services in the backend, we deploy [Nginx](https://nginx.org/) service to forward frontend requests and [gRPC](https://grpc.io/) service in Feed Handling and Tensorflow server.
+
+Malware sample submission in the frontend and Holmes Processing integration are not the goals of this project and left as todos in the future work.
+
+#### Preprocessing
+
+To get a normalized features from each analytic result, we first preprocess the data based on the method in [this paper](https://www.semanticscholar.org/paper/Empowering-convolutional-networks-for-malware-and-Kolosnjaji-Eraisha/a23e515361605d86ca75a0c9330cb6bd257987ff).
+
+There are currently four services working in Holmes Processing and the following are the features we extracted for training the learning model:
+
+- Cuckoo
+    - API calls (allowed up to 150): Each API call is converted to the index number in the 
+- Objdump
+    - OP code (allowed up to 100): Each OP code is coverted to the index number in the 
+- PEinfo
+    - Entrophy
+    - VirtualAddress
+    - Misc_VirtualSize
+    - SizeOfRawData in `.text`, `.data`, `.rsrc`, `.rdata`
+    - timestamp
+- Richheader
+    - Elements (as tuples) in `compids`, allowed up to 20
+
+In this project we only deal with samples labeled "malicious". Below are the possible labels and malware types:
+
+|Label|Malware Type|
+|:-:|:-:|
+|CryptoRansom||
+|apt1||
+|athena_variant|APT|
+|betabot|Hijacker|
+|blackshades|Trojan|
+|citadel_krebs|Crimeware|
+|darkcomet|Trojan|
+|darkddoser|Password stealing tool|
+|dirtjumper|DDoS Bot|
+|expiro|Virus|
+|gamarue|Worm|
+|ghostheart2||
+|locker||
+|machbot|Botnet|
+|mediyes||
+|nitol|Trojan|
+|pushdo|Botnet|
+|shylock|Trojan|
+|simda|Botnet|
+|yoyoddos2|Botnet|
+
+The preprocessed data are stored back to the storage with a timestamp. Therefore, when we are to train the model, we could then retrieve the preprocessed data from the storage, and also distinguish if the data are already used when retraining the model.
+
+#### Tensorflow
+
+Tensorflow server is responsible for training/testing a learning model, preparing a Tensorflow serving model, and handling the request regarding label prediction and relationship discovery.
+
+##### Neural networks
+
+![The architecture of neural networks](img/ctsung/NN.png){: .img-responsive}
+*The architecture of neural networks*
+{: .modal-descriptive-image}
+
+The extracted features in Cuckoo have ordering relationships with each other, while those in other services don't. Therefore, we build two kinds of neural networks to train Cuckoo's features and features of the other three services separately.
+
+Each network contains two hidden layers. Cuckoo's features are trained using convolutional neural networks (CNNs). Since the dimension of the feature vectors is quite large, we add [an embeddings layer](https://www.tensorflow.org/guide/embedding) in the CNN to increase the speed. The features of other services are trained with multi-layer perceptron.
+
+The two neural networks are concatenated [a sigmoid layer](https://www.tensorflow.org/api_docs/python/tf/sigmoid) is added, since we are doing multi-label classifications. After the construction of the overall neural networks, we do a 3-fold cross-validation for assessments. In the end, a model is generated for the purpose of [Tensorflow serving](https://www.tensorflow.org/serving/).
+
+##### Relationship discovery
+
+In order to find the relationships between different malware samples, we build a [KDTree](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KDTree.html) using activation vectors before the sigmoid layer, which are supposed to be valuable with the help of Tensorflow. We get the vectors from Tensorflow serving model that is generated after the training/testing process.
+
+##### RPC services
+
+- PredictLabel: Predict labels given the preprocessed features of a malware sample
+- GetRelationships: Find at most 500 closest malware samples given the sha256 of that in the storage
+- TrainModel: Retrain the existing learning model with the unused data, which are checked by timestamps in the storage
+
+#### Feed Handling
+
+The tasks of Feed Handling server are to handle the request from the frontend, and also stream data between different modules in the backend.
+
+##### RPC services
+
+- QueryRelationship: Request at most 500 closest malware samples from Tensorflow server given the sha256 of a malware sample in the storage and retrieve information from the storage given the desired metadata
+- InitiateTraining: Trigger Tensorflow server to retrain the learning model
+- GetTrainingData: Retrieve the training data from the storage
+
+#### Visualization
+
+![Visualization of a malware sample](img/ctsung/visualization.png){: .img-responsive}
+*Visualization of a malware sample*
+{: .modal-descriptive-image}
+
+We use [D3.js](https://d3js.org/) framework to visualize the results. In the frontend, user can: 
+
+- query related samples of a malware sample
+- choose which metadata to show
+- set the maximum number of presented samples
+- highlight the specific samples in the diagram
+- and retrain the learning model.
+
+The color of each sample stands for the closeness of the queried sample. Its range is from black to white, and the darker color means a more related sample.
+
+### Future Work
+
+1. Customized metadata extension in the frontend: Currently in the frontend, the metadata options are only MIME type and MD5, because we don't have much valuable data in the storage now. In the future, once we setup more analysis services, such as VirusTotal or YARA, we could then add more options for that.
+2. Relationship discovery with desired features: If we are to find relationship according to different indicators (like the features of PEinfo or Cuckoo), we should invest more time on surveying the impact factors of each indicator. Afterwards, either we prebuild the trees according to different combination of indicators (sacrifice space), or calculate the scores on the fly (sacrifice time).
+3. Holmes Processing integration: Since now the analytic part is done, we could then integrate Holmes Processing, whose tasks are, e.g., handling the submitted malware sample, into this pipeline. We can thus complete the cyber threat intelligence platform.
+
+### Acknowledgement
+
+I had great time and fun doing this GSoC project. Thank you for your support and guidance during these months: Huang, Bojan, and Dona. Also thanks George for the feedback in the last week's sprint.
+
+### About Me
+
+Chun-Te Sung is currently pursuing master in Computer Science in [Technical University of Munich](https://www.tum.de/). His interest is network security. During his free time, he takes part in CTF games. He was also the previous member of [Bamboofox](https://ctftime.org/team/9871) in Taiwan.
