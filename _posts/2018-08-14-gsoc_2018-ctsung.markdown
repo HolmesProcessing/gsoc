@@ -31,9 +31,9 @@ Therefore, the goals of this project are to
 *The analytic pipeline*
 {: .modal-descriptive-image}
 
-The pipeline contains two servers in the backend: Feed Handling and Tensorflow server. User in the frontend can either send model training request, or ask to visualize relationships of any desired malware samples.
+Above is the architecture of the pipeline. It contains two servers in the backend: Feed Handling and Tensorflow server. User in the frontend can either ask to visualize relationships of any desired malware samples (A), or send model training request (B).
 
-It is mainly written in Python. To handle requests from the frontend or stream data between different services in the backend, we deploy [Nginx](https://nginx.org/) service to forward frontend requests and [gRPC](https://grpc.io/) service in Feed Handling and Tensorflow server.
+The pipeline is mainly written in Python. To handle requests from the frontend or stream data between different services in the backend, we deploy [Nginx](https://nginx.org/) service to forward frontend requests and [gRPC](https://grpc.io/) service in Feed Handling and Tensorflow server.
 
 Malware sample submission in the frontend and Holmes Processing integration are not the goals of this project and left as todos in the future work.
 
