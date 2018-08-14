@@ -4,7 +4,7 @@ subtitle: Analytic Pipeline
 layout: default
 modal-id: 8
 category: gsoc2018
-date: 2018-08-14
+date: 2018-08-10
 img: relationship.svg
 thumbnail: relationship.svg
 alt: license-img
