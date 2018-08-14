@@ -1,5 +1,5 @@
 ---
-title: Holmes Processing: Automated Malware Relationship Mining
+title: Holmes Processing - Automated Malware Relationship Mining
 subtitle: Analytic Pipeline
 layout: default
 modal-id: 8
