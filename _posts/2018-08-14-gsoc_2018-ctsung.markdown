@@ -24,6 +24,7 @@ Therefore, the goals of this project are to
 2. discover relationships between different malware samples
 3. visualize relationships in frontend
 4. and build an analytic pipeline to integrate the implemented services.
+{: .text-left .spaced-list}
 
 ### Architecture
 
@@ -43,18 +44,11 @@ To get a normalized features from each analytic result, we first preprocess the 
 
 There are currently four services working in Holmes Processing and the following are the features we extracted for training the learning model:
 
-- Cuckoo
-    - API calls (allowed up to 150): Each API call is converted to the index number in the 
-- Objdump
-    - OP code (allowed up to 100): Each OP code is coverted to the index number in the 
-- PEinfo
-    - Entrophy
-    - VirtualAddress
-    - Misc_VirtualSize
-    - SizeOfRawData in `.text`, `.data`, `.rsrc`, `.rdata`
-    - timestamp
-- Richheader
-    - Elements (as tuples) in `compids`, allowed up to 20
+- Cuckoo: API calls (allowed up to 150), each of which is converted to the index number in the API list
+- Objdump: OP codes (allowed up to 100), each of which is converted to the index number in the X86OPCode list
+- PEinfo: Entrophy, VirtualAddress, Misc_VirtualSize, SizeOfRawData in `.text`, `.data`, `.rsrc`, `.rdata`, and timestamp
+- Richheader: Elements (as tuples) in `compids`, allowed up to 20
+{: .text-left .spaced-list}
 
 In this project we only deal with samples labeled "malicious". Below are the possible labels and malware types:
 
@@ -80,6 +74,7 @@ In this project we only deal with samples labeled "malicious". Below are the pos
 |shylock|Trojan|
 |simda|Botnet|
 |yoyoddos2|Botnet|
+{: class="table"}
 
 The preprocessed data are stored back to the storage with a timestamp. Therefore, when we are to train the model, we could then retrieve the preprocessed data from the storage, and also distinguish if the data are already used when retraining the model.
 
@@ -108,6 +103,7 @@ In order to find the relationships between different malware samples, we build a
 - PredictLabel: Predict labels given the preprocessed features of a malware sample
 - GetRelationships: Find at most 500 closest malware samples given the sha256 of that in the storage
 - TrainModel: Retrain the existing learning model with the unused data, which are checked by timestamps in the storage
+{: .text-left .spaced-list}
 
 #### Feed Handling
 
@@ -118,6 +114,7 @@ The tasks of Feed Handling server are to handle the request from the frontend, a
 - QueryRelationship: Request at most 500 closest malware samples from Tensorflow server given the sha256 of a malware sample in the storage and retrieve information from the storage given the desired metadata
 - InitiateTraining: Trigger Tensorflow server to retrain the learning model
 - GetTrainingData: Retrieve the training data from the storage
+{: .text-left .spaced-list}
 
 #### Visualization
 
@@ -132,6 +129,7 @@ We use [D3.js](https://d3js.org/) framework to visualize the results. In the fro
 - set the maximum number of presented samples
 - highlight the specific samples in the diagram
 - and retrain the learning model.
+{: .text-left .spaced-list}
 
 The color of each sample stands for the closeness of the queried sample. Its range is from black to white, and the darker color means a more related sample.
 
@@ -140,6 +138,7 @@ The color of each sample stands for the closeness of the queried sample. Its ran
 1. Customized metadata extension in the frontend: Currently in the frontend, the metadata options are only MIME type and MD5, because we don't have much valuable data in the storage now. In the future, once we setup more analysis services, such as VirusTotal or YARA, we could then add more options for that.
 2. Relationship discovery with desired features: If we are to find relationship according to different indicators (like the features of PEinfo or Cuckoo), we should invest more time on surveying the impact factors of each indicator. Afterwards, either we prebuild the trees according to different combination of indicators (sacrifice space), or calculate the scores on the fly (sacrifice time).
 3. Holmes Processing integration: Since now the analytic part is done, we could then integrate Holmes Processing, whose tasks are, e.g., handling the submitted malware sample, into this pipeline. We can thus complete the cyber threat intelligence platform.
+{: .text-left .spaced-list}
 
 ### Acknowledgement
 
